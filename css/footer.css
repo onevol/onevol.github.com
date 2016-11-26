@@ -1,0 +1,61 @@
+#footer {
+    height: 280px;
+    padding-top: 60px;
+    background-color: #fafafa;
+}
+
+#contact {
+    width: 1120px;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+}
+
+#contact dl {
+    float: left;
+    width: 173px;
+    line-height: 1;
+}
+
+#contact dl dt {
+    font-size: 18px;
+    padding-bottom: 13px
+}
+
+#contact dl dd {
+    padding: 6px 0;
+}
+
+.contact_url {
+    text-decoration: none;
+    color: #757575;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all 0.15s ease-out;
+    /*淡入淡出*/
+}
+
+.contact_url:hover, .contact_url:active {
+    text-decoration: none;
+    color: #6b95ea;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all 0.15s ease-out;
+    /*淡入淡出*/
+}
+
+#tel_number {
+    float: right;
+    padding-top: 30px;
+}
+
+#com_info {
+    clear: both;
+}
+
+.info {
+    padding-top: 30px;
+    margin: 0 auto;
+    text-align: center;
+}

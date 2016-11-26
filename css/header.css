@@ -1,0 +1,83 @@
+#header_background {
+    background-color: #000000;
+}
+
+#header {
+    width: 1120px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    padding-top: 25px;
+}
+
+.logo a {
+    width: 50px;
+    height: 50px;
+    background: url("../image/logo1.png") no-repeat;
+    display: block;
+}
+
+.menu {
+    float: right;
+}
+
+.menu_list {
+    padding-top: 40px;
+    float: left;
+}
+
+.menu_list li {
+    display: inline;
+    padding: 0 20px;
+}
+
+.menu_url {
+    /*cursor: pointer;*/
+    color: white;
+    opacity: 0.6;
+    text-decoration: none;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all 0.15s ease-out;
+    /*淡入淡出*/
+}
+
+.menu_url:hover, .menu_url:active {
+    /*cursor: pointer;*/
+    color: white;
+    opacity: 1;
+    text-decoration: none;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all 0.15s ease-out;
+    /*淡入淡出*/
+}
+
+.menu_list li a.active {
+    color: white;
+    opacity: 1;
+}
+
+.login {
+    float: left;
+    padding: 37px 0 0 41px;
+    margin-left: 20px;
+}
+
+.login_url {
+    color: #fafafa;
+    width: 98px;;
+    height: 26px;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+    background: linear-gradient(#181818, #131313);
+    border: 1px solid #2E2E2E;
+    border-radius: 4px;
+    display: block; /*!!!!!*/
+}

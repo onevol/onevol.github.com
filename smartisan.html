@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smartisan</title>
+    <link href="./image/logo.png" rel="shortcut icon">
+    <!--<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
+    <!--<meta name="viewport" content="width=375px">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <!--<meta name="HandheldFriendly" content="true">-->
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/top_button.css">
+    <script type="text/javascript">
+        //        var image0 = document.getElementById("image_0");
+        //        var image1 = document.getElementById("image_1");
+        //        var image2 = document.getElementById("image_2");
+        //        var image3 = document.getElementById("image_3");
+
+        var i = 0;
+        var auto = window.setInterval(function () {
+            if (i == 0) {
+                document.getElementById("image_3").style.opacity = "0";
+                document.getElementById("image_0").style.opacity = "1";
+                document.getElementById("image_3").style.zIndex = "0";
+                document.getElementById("image_0").style.zIndex = "1";
+                document.getElementById("dot_3").style.backgroundPosition = "0 0";
+                document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
+//                    i = 1;
+
+//                    window.setTimeout(change(i), 2000);
+            } else if (i == 1) {
+                document.getElementById("image_0").style.opacity = "0";
+                document.getElementById("image_1").style.opacity = "1";
+                document.getElementById("image_0").style.zIndex = "0";
+                document.getElementById("image_1").style.zIndex = "1";
+                document.getElementById("dot_0").style.backgroundPosition = "0 0";
+                document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
+//                    i = 2;
+//                    window.setTimeout(change(i), 2000);
+            } else if (i == 2) {
+                document.getElementById("image_1").style.opacity = "0";
+                document.getElementById("image_2").style.opacity = "1";
+                document.getElementById("image_1").style.zIndex = "0";
+                document.getElementById("image_2").style.zIndex = "1";
+                document.getElementById("dot_1").style.backgroundPosition = "0 0";
+                document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
+//                    i = 3;
+//                    window.setTimeout(change(i), 2000);
+            } else if (i == 3) {
+                document.getElementById("image_2").style.opacity = "0";
+                document.getElementById("image_3").style.opacity = "1";
+                document.getElementById("image_2").style.zIndex = "0";
+                document.getElementById("image_3").style.zIndex = "1";
+                document.getElementById("dot_2").style.backgroundPosition = "0 0";
+                document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
+//                    i = 0;
+//                    window.setTimeout(change(i), 2000);
+            }
+            i += 1;
+            if (i == 4) {
+                i = 0;
+            }
+        }, 3000);
+
+        function changeImage0() {
+            i = 0;
+            document.getElementById("image_0").style.opacity = "1";
+            document.getElementById("image_1").style.opacity = "0";
+            document.getElementById("image_2").style.opacity = "0";
+            document.getElementById("image_3").style.opacity = "0";
+            document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
+            document.getElementById("dot_1").style.backgroundPosition = "0 0";
+            document.getElementById("dot_2").style.backgroundPosition = "0 0";
+            document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+        }
+        function changeImage1() {
+            i = 1;
+            document.getElementById("image_0").style.opacity = "0";
+            document.getElementById("image_1").style.opacity = "1";
+            document.getElementById("image_2").style.opacity = "0";
+            document.getElementById("image_3").style.opacity = "0";
+            document.getElementById("dot_0").style.backgroundPosition = "0 0";
+            document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
+            document.getElementById("dot_2").style.backgroundPosition = "0 0";
+            document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+        }
+        function changeImage2() {
+            i = 2;
+            document.getElementById("image_0").style.opacity = "0";
+            document.getElementById("image_1").style.opacity = "0";
+            document.getElementById("image_2").style.opacity = "1";
+            document.getElementById("image_3").style.opacity = "0";
+            document.getElementById("dot_0").style.backgroundPosition = "0 0";
+            document.getElementById("dot_1").style.backgroundPosition = "0 0";
+            document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
+            document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+        }
+        function changeImage3() {
+            i = 3;
+            document.getElementById("image_0").style.opacity = "0";
+            document.getElementById("image_1").style.opacity = "0";
+            document.getElementById("image_2").style.opacity = "0";
+            document.getElementById("image_3").style.opacity = "1";
+            document.getElementById("dot_0").style.backgroundPosition = "0 0";
+            document.getElementById("dot_1").style.backgroundPosition = "0 0";
+            document.getElementById("dot_2").style.backgroundPosition = "0 0";
+            document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
+
+        }
+
+        window.onscroll = function () {
+            var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+            if (scrollTop > 500) { //判断滚动条距离窗口顶部多远时显示出来，这里是100px
+//                document.getElementById("top_button").style.display = "block";
+                document.getElementById("top_button").style.transform = "translate3d(0,0,0)";
+                document.getElementById("top_button").style.width = "64px";
+                document.getElementById("top_button").style.height = "64px";
+            } else {
+                document.getElementById("top_button").style.transform = "translate3d(12px,160px,0)";
+                document.getElementById("top_button").style.width = "100px";
+                document.getElementById("top_button").style.height = "100px";
+            }
+        };
+
+
+    </script>
+    <style>
+        body {
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+            /*max-width: 1263px;*/
+            min-width: 1202px;
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+            background-color: #ededed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu_list li a.active {
+            color: white;
+            opacity: 1;
+        }
+
+        #sub_menu {
+            width: 1120px;
+            margin: 0 auto;
+            height: 90px;
+        }
+
+        #sub_menu_left {
+            float: left;
+        }
+
+        #sub_menu_list {
+            padding-top: 37px;
+            margin: 0 0;
+        }
+
+        #sub_menu_list li {
+            /*display: list-item;*/
+            float: left;
+            margin-left: 35px;
+            padding-left: 10px;
+            /*list-style: none;*/
+        }
+
+        /*#sub_menu_list li:before{*/
+        /*content: ' ';*/
+        /*display: block;*/
+        /*position: absolute;*/
+        /*left: 20px;*/
+        /*top: 50%;*/
+        /*width: 2px;*/
+        /*height: 2px;*/
+        /*margin-top: -1px;*/
+        /*background: #C7C7C7;*/
+        /*}*/
+
+        .sub_menu_url {
+            text-decoration: none;
+            color: #757575;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出 ease-out 减速*/
+        }
+
+        .sub_menu_url:hover, .sub_menu_url:active {
+            text-decoration: none;
+            color: #6b95ea;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        #shopping_cart {
+            float: right;
+            padding-top: 36px;
+            padding-right: 40px;
+        }
+
+        #content {
+            width: 1120px;
+            margin: 0 auto;
+        }
+
+        #image {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #dcdcdc;
+            border-color: rgba(0, 0, 0, 0);
+
+        }
+
+        #auto_image {
+            height: 460px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            border-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.8);
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+        #image_0 {
+            position: absolute;
+            display: block;
+            opacity: 1;
+            z-index: 1;
+            -webkit-transition: opacity 1.5s ease;
+            -moz-transition: opacity 1.5s ease;
+            transition: opacity 1.5s ease;
+        }
+
+        #image_1, #image_2, #image_3 {
+            position: absolute;
+            display: block;
+            opacity: 0;
+            -webkit-transition: opacity 1.5s ease;
+            -moz-transition: opacity 1.5s ease;
+            transition: opacity 1.5s ease;
+
+        }
+
+        #image_1 a, #image_0 a, #image_2 a, #image_3 a {
+            border-radius: 10px;
+            display: block;
+            width: 1116px;
+            height: 460px;
+        }
+
+        #slide_button {
+            position: absolute;
+            bottom: 9.9%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            cursor: default;
+            z-index: 2;
+        }
+
+        #slide_button li {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url("./image/loop-dot.png") no-repeat;
+            background-image: -webkit-image-set(url(./image/loop-dot.png) 1x, url(./image/dot1.png) 2x); /*image-set实现Retina屏幕下图片显示*/
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #dot_0 {
+            background-position: 0 -18px;
+        }
+
+        #dot_1, #dot_2, #dot_3 {
+            background-position: 0 0;
+        }
+
+        #image_list {
+            width: 1118px;
+            margin-top: 8px;
+            background: #EFEFEF;
+            border-radius: 10px;
+            border: 1px solid #dcdcdc;
+            border-color: rgba(0, 0, 0, .14);
+            box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .T2 {
+            width: 745px;
+            height: 320px;
+            background: #ffffff url("./image/T2.png") right bottom no-repeat;
+            /*border-radius: 10px 0 0 0;*//*父类用了overflow: hidden;*/
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .T2:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .T2_info {
+            width: 450px;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .service {
+            margin-top: 1px;
+            width: 745px;
+            height: 320px;
+            background: #ffffff url("./image/service.png") right no-repeat;
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .service:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .service_info {
+            width: 422px;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .earphone {
+            float: right;
+            width: 372px;
+            height: 641px;
+            background: #ffffff url("./image/earphone.png") center bottom no-repeat;
+            /*border-radius: 0 10px 0 0;*//*父类用了overflow: hidden;*/
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .earphone:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .earphone_info {
+            width: 372px;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .feelings_shell {
+            float: left;
+            width: 372px;
+            height: 405px;
+            margin-top: 1px;
+            background: #ffffff url("./image/shell1.png") bottom center no-repeat;
+            position: relative;
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .feelings_shell:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .feelings_info {
+            text-align: left;
+        }
+
+        .colorful_shell {
+            float: left;
+            width: 372px;
+            height: 405px;
+            margin-top: 1px;
+            margin-left: 1px;
+            background: #ffffff url("./image/shell2.png") bottom center no-repeat;
+            position: relative;
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .colorful_shell:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .colorful_info {
+            text-align: left;
+        }
+
+        .art_shell {
+            float: left;
+            width: 372px;
+            height: 405px;
+            margin-top: 1px;
+            margin-left: 1px;
+            background: #ffffff url("./image/shell3.png") bottom center no-repeat;
+            position: relative;
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .art_shell:hover {
+            -moz-box-shadow: 5px 5px 10px #ededed inset; /* For Firefox3.6+ */
+            -webkit-box-shadow: 5px 5px 10px #ededed inset; /* For Chrome5+, Safari5+ */
+            box-shadow: 0 0 30px #ededed inset;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .art_info {
+            text-align: left;
+        }
+
+        #main {
+            padding-bottom: 20px;
+        }
+
+        #hint {
+            width: 1120px;
+            margin: 0 auto;
+        }
+
+        .hint_info {
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid #dcdcdc;
+            border-color: rgba(0, 0, 0, .14);
+            box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
+            overflow: hidden;
+            background-color: #ffffff;
+            cursor: default;
+        }
+
+        .customer {
+            float: left;
+            width: 279px;
+            height: 153px;
+            text-align: center;
+        }
+
+        .customer_icon {
+            margin: 33px auto 5px;
+            background: url("./image/hint.png") top left no-repeat;
+            width: 36px;
+            height: 36px;
+            opacity: 0.6;
+        }
+
+        .return_goods {
+            float: left;
+            width: 279px;
+            height: 153px;
+            text-align: center;
+        }
+
+        .sevenDay_icon {
+            margin: 33px auto 5px;
+            background: url("./image/hint.png") top left no-repeat;
+            background-position: -50px 0;
+            width: 36px;
+            height: 36px;
+            opacity: 0.6;
+        }
+
+        .change_goods {
+            float: left;
+            width: 279px;
+            height: 153px;
+            text-align: center;
+        }
+
+        .fifteenDay_icon {
+            margin: 33px auto 5px;
+            background: url("./image/hint.png") top left no-repeat;
+            background-position: -100px 0;
+            width: 36px;
+            height: 36px;
+            opacity: 0.6;
+        }
+
+        .express {
+            float: left;
+            width: 279px;
+            height: 153px;
+            text-align: center;
+        }
+
+        .gift_icon {
+            margin: 33px auto 5px;
+            background: url("./image/hint.png") top left no-repeat;
+            background-position: -150px 0;
+            width: 36px;
+            height: 36px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div id="header_background">
+    <div id="header">
+    <span class="logo">
+        <a href="#"></a>
+    </span>
+        <div class="menu">
+            <ul class="menu_list">
+                <li><a href="#" class="menu_url active">在线商场</a></li>
+                <li><a href="#" class="menu_url">Smartisan T2</a></li>
+                <li><a href="#" class="menu_url">坚果手机</a></li>
+                <li><a href="#" class="menu_url">Smartisan OS</a></li>
+                <li><a href="#" class="menu_url">欢喜云</a></li>
+                <li><a href="#" class="menu_url">应用下载</a></li>
+                <li><a href="#" class="menu_url">官方论坛</a></li>
+            </ul>
+            <div class="login" onclick="window.location.href='#'" style="cursor:pointer">
+                <a class="login_url">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div id="sub_menu">
+        <div id="sub_menu_left">
+            <ul id="sub_menu_list">
+                <li style="padding-left: 9px; margin-left: 0;"><a href="#" class="sub_menu_url"><b>精选</b></a></li>
+                <li><a href="#" class="sub_menu_url">手机</a></li>
+                <li><a href="#" class="sub_menu_url">耳机/音响</a></li>
+                <li><a href="#" class="sub_menu_url">背壳/保护套</a></li>
+                <li><a href="#" class="sub_menu_url">“情怀”背壳</a></li>
+                <li><a href="#" class="sub_menu_url">其他周边</a></li>
+                <li><a href="#" class="sub_menu_url">保修服务</a></li>
+                <li><a href="#" class="sub_menu_url">全部商品</a></li>
+            </ul>
+        </div>
+        <div id="shopping_cart">
+            <a href="#" style="text-decoration: none;color: #757575;">购物车</a>
+        </div>
+    </div>
+    <div id="content">
+        <div id="image">
+            <ul id="auto_image">
+                <li id="image_0"><a href="#" style="cursor: pointer;background: url('image/image_1.jpg'); display: block;background-size: contain;"></a></li>
+                <li id="image_1"><a href="#" style="cursor: pointer;background: url('image/note.png'); display: block;background-size: contain;"></a></li>
+                <li id="image_2"><a href="./handShaker.html" style="cursor: pointer;background: url('image/handshaker.jpg'); display: block;background-size: contain;"></a></li>
+                <li id="image_3"><a href="#" style="cursor: pointer;background: url('image/desktop.png'); display: block;background-size: contain;"></a></li>
+            </ul>
+            <ul id="slide_button">
+                <li id="dot_0" onclick="changeImage0()" style="background-position: 0 -18px;"></li>
+                <li id="dot_1" onclick="changeImage1()"></li>
+                <li id="dot_2" onclick="changeImage2()"></li>
+                <li id="dot_3" onclick="changeImage3()"></li>
+            </ul>
+
+        </div>
+        <div id="image_list">
+            <ul>
+                <li class="earphone">
+                    <div class="earphone_info">
+                        <p style="font-size: 24px">Smartisan S-1000 系列</p>
+                        <p style="padding-top: 12px; color: #b2b2b2">VSONIC创始人全程参与调音</p>
+                        <p style="padding-top: 20px; font-size: 30px; color: #DE4037"><span
+                                style="font-size: 18px">￥</span>199</p>
+                    </div>
+                </li>
+                <li class="T2">
+                    <div class="T2_info">
+                        <p style="font-size: 24px">Smartisan T2 官方保护套</p>
+                        <p style="padding-top: 12px; color: #b2b2b2">保护玻璃表面的同时，也与黑色机身相得益彰</p>
+                        <p style="padding-top: 20px; font-size: 30px; color: #DE4037"><span
+                                style="font-size: 18px">￥</span>49</p>
+                    </div>
+                </li>
+                <li class="service">
+                    <div class="service_info">
+                        <p style="font-size: 24px">手机意外保修服务</p>
+                        <p style="padding-top: 12px; color: #b2b2b2">免费更换一次主机，免费两次维修</p>
+                    </div>
+                </li>
+                <li class="feelings_shell">
+                    <div class="feelings_info">
+                        <p style="position: absolute; left: 0; bottom: 40px; right: 0; font-size: 18px; padding-left: 41px; font-weight: 300;">
+                            “情怀”背壳系列<br>
+                            <span style="color: #b2b2b2; font-size: 12px">为了那些改变人类进程的足迹</span></p>
+                        <p style="position: absolute; bottom: 38px; right: 40px; font-size: 24px; line-height: 24px; color: #DE4037;"><span
+                                style="font-size: 18px">￥</span>69</p>
+                    </div>
+                </li>
+                <li class="colorful_shell">
+                    <div class="colorful_info">
+                        <p style="position: absolute; left: 0; bottom: 40px; right: 0; font-size: 18px; padding-left: 41px; font-weight: 300;">
+                            坚果手机标准版七彩背壳<br>
+                            <span style="color: #b2b2b2; font-size: 12px">智能识别贝壳颜色，自动匹配多彩主题</span></p>
+                        <p style="position: absolute; bottom: 38px; right: 40px; font-size: 24px; line-height: 24px; color: #DE4037;"><span
+                                style="font-size: 18px">￥</span>49</p>
+                    </div>
+                </li>
+                <li class="art_shell">
+                    <div class="art_info">
+                        <p style="position: absolute; left: 0; bottom: 40px; right: 0; font-size: 18px; padding-left: 41px; font-weight: 300;">
+                            坚果手机文青版多彩背壳<br>
+                            <span style="color: #b2b2b2; font-size: 12px">智能识别贝壳颜色，自动匹配多彩主题</span></p>
+                        <p style="position: absolute; bottom: 38px; right: 40px; font-size: 24px; line-height: 24px; color: #DE4037;"><span
+                                style="font-size: 18px">￥</span>49</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="hint">
+        <ul class="hint_info">
+            <li class="customer">
+                <div class="customer_icon"></div>
+                <p style="font-size: 16px">在线客服</p>
+                <p style="font-size: 12px; margin-top: 5px; color: #a8a8a8">周一至周日 9:00-18:00</p>
+            </li>
+            <li class="return_goods">
+                <div class="sevenDay_icon"></div>
+                <p style="font-size: 16px">7 天无理由退货</p>
+                <p style="font-size: 12px; margin-top: 5px; color: #a8a8a8">7 天无理由退货 请放心购买</p>
+            </li>
+            <li class="change_goods">
+                <div class="fifteenDay_icon"></div>
+                <p style="font-size: 16px">15 天免费换货</p>
+                <p style="font-size: 12px; margin-top: 5px; color: #a8a8a8">15 天内如遇质量问题 免费换货</p>
+            </li>
+            <li class="express">
+                <div class="gift_icon"></div>
+                <p style="font-size: 16px">满 150 元免运费</p>
+                <p style="font-size: 12px; margin-top: 5px; color: #a8a8a8">全场使用顺丰快递</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="footer">
+    <div id="contact" style="height:180px">
+        <dl>
+            <dt>订单服务</dt>
+            <dd><a href="./support/buy.html" class="contact_url">购买指南</a></dd>
+            <dd><a href="./support/pay.html" class="contact_url">支付方式</a></dd>
+            <dd><a href="./support/express.html" class="contact_url">送货政策</a></dd>
+        </dl>
+        <dl>
+            <dt>服务支持</dt>
+            <dd><a href="#" class="contact_url">售后服务</a></dd>
+            <dd><a href="#" class="contact_url">维修门店</a></dd>
+            <dd><a href="#" class="contact_url">零售门店</a></dd>
+        </dl>
+        <dl>
+            <dt>媒体中心</dt>
+            <dd><a href="#" class="contact_url">新闻动态</a></dd>
+            <dd><a href="#" class="contact_url">官方视频</a></dd>
+            <dd><a href="#" class="contact_url">图片资源</a></dd>
+        </dl>
+        <dl>
+            <dt>关于公司</dt>
+            <dd><a href="#" class="contact_url">公司简介</a></dd>
+            <dd><a href="#" class="contact_url">加入我们</a></dd>
+            <dd><a href="#" class="contact_url">联系我们</a></dd>
+        </dl>
+        <dl>
+            <dt>关注我们</dt>
+            <dd><a href="#" class="contact_url">新浪微博</a></dd>
+            <dd><a href="#" class="contact_url">官方微信</a></dd>
+            <dd><a href="#" class="contact_url">官方贴吧</a></dd>
+        </dl>
+        <div id="tel_number">
+            <a href="tel:400-619-0909" style="font-size: 34px; cursor: default; text-decoration: none; color: #757575;">400-619-0909</a>
+        </div>
+    </div>
+    <!--<hr style="clear: both; width: 1120px; margin: 0 auto;color: #ededed">-->
+    <div id="com_info">
+        <div class="info" style="font-size: 12px">
+            Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司 | <a>法律声明</a> | 隐私条款 |
+            开发者中心<br>
+            <a>京ICP备14041720号-1京ICP证140622号京公网安备11010502025474</a>
+        </div>
+    </div>
+</div>
+<div id="top_button" onclick="window.location.href='javascript:scroll(0,0)'">TOP</div>
+</body>
+</html>

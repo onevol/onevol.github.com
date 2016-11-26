@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付方式</title>
+    <link type="text/css" rel="stylesheet" href="../css/header.css">
+    <link type="text/css" rel="stylesheet" href="../css/footer.css">
+    <link type="text/css" rel="stylesheet" href="../css/top_button.css">
+    <script src="../top_button.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+            /*max-width: 1263px;*/
+            min-width: 1202px;
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+            background-color: #ededed;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #main {
+            width: 1120px;
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .sub_menu {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #dcdcdc;
+            border-color: rgba(0, 0, 0, .14);
+            box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
+            float: left;
+            margin-right: 18px;
+            overflow: hidden;
+        }
+
+        .help {
+            width: 182px;
+            line-height: 60px;
+            font-size: 18px;
+            color: #333;
+            padding-left: 30px;
+            border-bottom: 1px solid #d4d4d4;
+            background: linear-gradient(#fbfbfb, #ececec);
+        }
+
+        .sub_menu_list li {
+            line-height: 50px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-left: 30px;
+            width: 182px;
+            font-size: 16px;
+            cursor: pointer;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .sub_menu_list li:hover, .sub_menu_list li.active {
+            color: #fff;
+            font-weight: bolder;
+            background: #6785d9;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        .content {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #dcdcdc;
+            border-color: rgba(0, 0, 0, .14);
+            box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+
+        .guide {
+            line-height: 60px;
+            font-size: 18px;
+            color: #333;
+            padding-left: 30px;
+            border-bottom: 1px solid #d4d4d4;
+            box-shadow: rgba(0, 0, 0, .06) 0 1px 7px;
+        }
+
+        .content p {
+            padding: 30px;
+            line-height: 2em;
+        }
+
+        .content h1 {
+            background: #E6E7E8;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: 400;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="header_background">
+    <div id="header">
+    <span class="logo">
+        <a href="../smartisan.html"></a>
+    </span>
+        <div class="menu">
+            <ul class="menu_list">
+                <li><a href="#" class="menu_url">在线商场</a></li>
+                <li><a href="#" class="menu_url">Smartisan T2</a></li>
+                <li><a href="#" class="menu_url">坚果手机</a></li>
+                <li><a href="#" class="menu_url">Smartisan OS</a></li>
+                <li><a href="#" class="menu_url">欢喜云</a></li>
+                <li><a href="#" class="menu_url">应用下载</a></li>
+                <li><a href="#" class="menu_url">官方论坛</a></li>
+            </ul>
+            <div class="login" onclick="window.location.href='#'" style="cursor:pointer">
+                <a class="login_url">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div class="sub_menu">
+        <div class="help">
+            帮助中心
+        </div>
+        <ul class="sub_menu_list">
+            <li onclick="window.location.href='./buy.html'">购买指南</li>
+            <li class="active">支付方式</li>
+            <li onclick="window.location.href='./express.html'" style="border-bottom: 0px">送货政策</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="guide">
+            支付方式
+        </div>
+        <p>
+            官网购买只支持在线支付，包括支付宝、微信支付、银联在线、网银支付、招行分期。
+        </p>
+        <h1>支付方式</h1>
+        <p>
+            <b>支付方式</b><br><br>
+
+            问：是否可以货到付款？<br>
+            答：目前暂不支持货到付款。<br>
+            问：支付成功后会有提示短信吗？<br>
+            答：支付成功后您的手机会收到支付成功的短信提醒。<br>
+            问：订单是否可以分开支付？<br>
+            答：订单金额只能一次性支付，不能分开支付。<br><br>
+            <b>分期付款</b><br><br>
+
+            问：是否支持分期付款？<br>
+            答：购买锤子科技出品的手机产品时，支持招商银行信用卡分期付款。<br>
+            问：分期付款如何购买？<br>
+            答：填写订单信息或付款时请选择分期付款，并按提示操作。<br><br>
+            <b>支付遇到问题</b><br><br>
+
+            问：在线支付后，系统提示已经支付成功，订单显示未支付怎么办？<br>
+            答：如确认已经支付成功并账户扣款，但订单状态没有变化，可能是支付平台数据没有及时同步到预订官网，请您稍后刷新页面查看订单状态，或及时联系客服处理。<br>
+            问：为何支付时提示已超支付限额？<br>
+            答：使用网银支付时，可能会因为支付限额问题而支付不成功，您可到网银支付平台提高您的支付限额或联系银行客服中心咨询。<br>
+            为避免支付限额而引起的支付问题，建议您使用支付宝、微信支付或银联在线支付。查看支付限额<br>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div id="contact" style="height:180px">
+        <dl>
+            <dt>订单服务</dt>
+            <dd><a href="./buy.html" class="contact_url">购买指南</a></dd>
+            <dd><a href="./pay.html" class="contact_url">支付方式</a></dd>
+            <dd><a href="./express.html" class="contact_url">送货政策</a></dd>
+        </dl>
+        <dl>
+            <dt>服务支持</dt>
+            <dd><a href="#" class="contact_url">售后服务</a></dd>
+            <dd><a href="#" class="contact_url">维修门店</a></dd>
+            <dd><a href="#" class="contact_url">零售门店</a></dd>
+        </dl>
+        <dl>
+            <dt>媒体中心</dt>
+            <dd><a href="#" class="contact_url">新闻动态</a></dd>
+            <dd><a href="#" class="contact_url">官方视频</a></dd>
+            <dd><a href="#" class="contact_url">图片资源</a></dd>
+        </dl>
+        <dl>
+            <dt>关于公司</dt>
+            <dd><a href="#" class="contact_url">公司简介</a></dd>
+            <dd><a href="#" class="contact_url">加入我们</a></dd>
+            <dd><a href="#" class="contact_url">联系我们</a></dd>
+        </dl>
+        <dl>
+            <dt>关注我们</dt>
+            <dd><a href="#" class="contact_url">新浪微博</a></dd>
+            <dd><a href="#" class="contact_url">官方微信</a></dd>
+            <dd><a href="#" class="contact_url">官方贴吧</a></dd>
+        </dl>
+        <div id="tel_number">
+            <a href="tel:400-619-0909" style="font-size: 34px; cursor: default; text-decoration: none; color: #757575;">400-619-0909</a>
+        </div>
+    </div>
+    <!--<hr style="clear: both; width: 1120px; margin: 0 auto;color: #ededed">-->
+    <div id="com_info">
+        <div class="info" style="font-size: 12px">
+            Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司 | <a>法律声明</a> | 隐私条款 |
+            开发者中心<br>
+            <a>京ICP备14041720号-1京ICP证140622号京公网安备11010502025474</a>
+        </div>
+    </div>
+</div>
+<div id="top_button" onclick="window.location.href='javascript:scroll(0,0)'">TOP</div>
+</body>
+</html>

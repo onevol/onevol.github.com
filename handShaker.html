@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HandShaker</title>
+    <link href="./image/logo.png" rel="shortcut icon">
+    <link type="text/css" rel="stylesheet" href="css/header.css">
+    <link type="text/css" rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/top_button.css">
+    <script src="top_button.js"></script>
+    <script>
+        function showOld() {
+            document.getElementsByClassName("old_icon").item(0).style.display = "block";
+        }
+        function hideOld() {
+            document.getElementsByClassName("old_icon").item(0).style.display = "none";
+        }
+
+        //        var image0 = document.getElementById("image_0");
+        //        var image1 = document.getElementById("image_1");
+        //        var image2 = document.getElementById("image_2");
+        //        var image3 = document.getElementById("image_3");
+
+        var i = 0;
+        var auto = window.setInterval(function () {
+            if (i == 0) {
+                document.getElementById("image_4").style.opacity = "0";
+                document.getElementById("image_1").style.opacity = "1";
+                document.getElementById("image_44").style.opacity = "0";
+                document.getElementById("image_11").style.opacity = "1";
+            } else if (i == 1) {
+                document.getElementById("image_1").style.opacity = "0";
+                document.getElementById("image_2").style.opacity = "1";
+                document.getElementById("image_1").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_2").style.transition = "opacity 1.5s ease-in-out";
+                document.getElementById("image_11").style.opacity = "0";
+                document.getElementById("image_22").style.opacity = "1";
+                document.getElementById("image_11").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_22").style.transition = "opacity 1.5s ease-in-out";
+            } else if (i == 2) {
+                document.getElementById("image_2").style.opacity = "0";
+                document.getElementById("image_3").style.opacity = "1";
+                document.getElementById("image_2").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_3").style.transition = "opacity 1.5s ease-in-out";
+                document.getElementById("image_22").style.opacity = "0";
+                document.getElementById("image_33").style.opacity = "1";
+                document.getElementById("image_22").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_33").style.transition = "opacity 1.5s ease-in-out";
+            } else if (i == 3) {
+                document.getElementById("image_3").style.opacity = "0";
+                document.getElementById("image_4").style.opacity = "1";
+                document.getElementById("image_3").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_4").style.transition = "opacity 1.5s ease-in-out";
+                document.getElementById("image_1").style.transition = "opacity 1.5s ease-in-out";
+                document.getElementById("image_33").style.opacity = "0";
+                document.getElementById("image_44").style.opacity = "1";
+                document.getElementById("image_33").style.transition = "opacity 0s ease-in-out 1.5s";
+                document.getElementById("image_44").style.transition = "opacity 1.5s ease-in-out";
+                document.getElementById("image_11").style.transition = "opacity 1.5s ease-in-out";
+            }
+            i += 1;
+            if (i == 4) {
+                i = 0;
+            }
+        }, 3500);
+
+        window.onload = function () {
+            document.getElementById("handShaker_icon").setAttribute('class','active');
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+            /*max-width: 1263px;*/
+            min-width: 1202px;
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+            background-color: #ededed;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #main {
+            text-align: center;
+        }
+
+        #sub_menu {
+            width: 1120px;
+            margin: 0 auto;
+            height: 90px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #sub_menu_list {
+            padding-top: 37px;
+        }
+
+        #sub_menu_list li {
+            float: left;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        .sub_menu_url {
+            text-decoration: none;
+            color: #757575;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出 ease-out 减速*/
+        }
+
+        .sub_menu_url:hover, .sub_menu_url:active {
+            text-decoration: none;
+            color: #6b95ea;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出*/
+        }
+
+        #sub_menu_list li a.active {
+            color: #6b95ea;
+        }
+
+        #handShaker_icon {
+            width: 128px;
+            height: 128px;
+            margin: 30px auto 10px;
+            background: url("./image/handshaker-icon.png") no-repeat;
+            -webkit-transition: transform 2s cubic-bezier(.165, .84, .44, 1);
+            transition: transform 2s cubic-bezier(.165, .84, .44, 1)
+        }
+
+        .active {
+            transform: translate(0, 20%);
+        }
+
+        #content {
+            margin: 0 auto;
+        }
+
+        #content h1 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .old_name {
+            height: 40px;
+        }
+
+        .old_name p {
+            display: inline-block;
+        }
+
+        .old_icon p {
+            display: block;
+            margin: 0 0 10px 104px;
+        }
+
+        .help {
+            width: 14px;
+            height: 14px;
+            padding: 14px 3px 0;
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            background: url("./image/help_icon.png") bottom center no-repeat;
+        }
+
+        .old_icon {
+            display: none;
+            position: absolute;
+            margin-left: -193px;
+            top: -130px;
+            width: 380px;
+            border: 0 solid rgba(255, 255, 255, 0);
+            border-radius: 5px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 4px 10px rgba(0, 0, 0, .17);
+            background-color: white;
+            padding: 15px;
+            overflow: hidden;
+            text-align: left;
+
+        }
+
+        .old_icon img {
+            float: left;
+        }
+
+        .download {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            box-sizing: border-box;
+            border: 0 solid rgba(0, 0, 0, .01);
+            border-radius: 6px;
+            box-shadow: inset 0 0 0 1px #e6e6e6;
+            background-image: linear-gradient(#fafafa, #f9f9f9);
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        .download:hover {
+            background-image: linear-gradient(#f9f9f9, #f0f0f0);
+        }
+
+        .old_icon:hover {
+            display: block;
+        }
+
+        .mac_download {
+            margin-top: 30px;
+        }
+
+        .mac_download div, .mac_download a {
+            display: inline-block;
+        }
+
+        .mac_download div p {
+            margin-top: 16px;
+            font-size: 12px;
+            color: #bdbdbd;
+        }
+
+        .dmg {
+            cursor: pointer;
+            width: 210px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #d1d1d1;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .dmg:hover {
+            background-color: #e1e1e1;
+        }
+
+        .tips {
+            width: 100px;
+            height: 80px;
+        }
+
+        .appstore {
+            cursor: pointer;
+            width: 210px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #5c5c5c;
+            border-radius: 6px;
+            background-color: #6c6c6c;
+            position: relative;
+        }
+
+        .appstore::after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: url("./image/appstore.png") no-repeat center;
+            background-size: auto 33px;
+        }
+
+        .appstore:hover {
+            background-color: #3f3f3f;
+        }
+
+        .slide {
+            width: 1225px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .macbook {
+            width: 100%;
+            height: 687px;
+            background: url("./image/macbook.jpg") no-repeat;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+
+        .macbook img {
+            position: absolute;
+            left: 198px;
+            top: 77px;
+            height: 506px;
+        }
+
+        #image_1 {
+            opacity: 1;
+            -webkit-transition: opacity 1.5s ease-in-out;
+            -moz-transition: opacity 1.5s ease-in-out;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #image_2, #image_3, #image_4 {
+            opacity: 0;
+            -webkit-transition: opacity 0s ease-in-out 1.5s;
+            -moz-transition: opacity 0s ease-in-out 1.5s;
+            transition: opacity 0s ease-in-out 1.5s;
+        }
+
+        .phone {
+            position: absolute;
+            z-index: 3;
+            right: 2%;
+            bottom: -22.6%;
+            width: 302px;
+            height: 742px;
+            background: url("image/phone.png") no-repeat;
+            background-size: contain;
+        }
+
+        .phone img {
+            position: absolute;
+            top: 70px;
+            left: 18px;
+            width: 266px;
+        }
+
+        #image_11 {
+            opacity: 1;
+            -webkit-transition: opacity 1.5s ease-in-out;
+            -moz-transition: opacity 1.5s ease-in-out;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #image_22, #image_33, #image_44 {
+            opacity: 0;
+            -webkit-transition: opacity 0s ease-in-out 1.5s;
+            -moz-transition: opacity 0s ease-in-out 1.5s;
+            transition: opacity 0s ease-in-out 1.5s;
+        }
+
+        .features {
+            width: 1120px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header_background">
+    <div id="header">
+    <span class="logo">
+        <a href="./smartisan.html"></a>
+    </span>
+        <div class="menu">
+            <ul class="menu_list">
+                <li><a href="#" class="menu_url">在线商场</a></li>
+                <li><a href="#" class="menu_url">Smartisan T2</a></li>
+                <li><a href="#" class="menu_url">坚果手机</a></li>
+                <li><a href="#" class="menu_url">Smartisan OS</a></li>
+                <li><a href="#" class="menu_url">欢喜云</a></li>
+                <li><a href="#" class="menu_url active">应用下载</a></li>
+                <li><a href="#" class="menu_url">官方论坛</a></li>
+            </ul>
+            <div class="login" onclick="window.location.href='#'" style="cursor:pointer">
+                <a class="login_url">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div id="sub_menu">
+        <ul id="sub_menu_list">
+            <li style="padding-left: 9px; margin-left: 0;"><a href="#" class="sub_menu_url">全部应用</a></li>
+            <li><a href="#" class="sub_menu_url">R适配</a></li>
+            <li><a href="#" class="sub_menu_url">锤子桌面</a></li>
+            <li><a href="#" class="sub_menu_url active">HandShaker</a></li>
+            <li><a href="#" class="sub_menu_url">锤子阅读</a></li>
+            <li><a href="#" class="sub_menu_url">锤子便签</a></li>
+            <li><a href="#" class="sub_menu_url">锤子邮件</a></li>
+            <li><a href="#" class="sub_menu_url">锤子时钟</a></li>
+            <li><a href="#" class="sub_menu_url">锤子日历</a></li>
+            <li><a href="#" class="sub_menu_url">欢喜云同步工具</a></li>
+            <li><a href="#" class="sub_menu_url">锤子科技论坛</a></li>
+            <li><a href="#" class="sub_menu_url">锤子驾驶</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="handShaker_icon" class="androidicon">
+        </div>
+        <h1>HandShaker</h1>
+        <div class="old_name">
+            <p style="text-align: center">（原名 SmartFinder</p>
+            <div class="help" onmouseover="showOld()" onmouseout="hideOld()">
+                <div class="old_icon">
+                    <img src="image/old-icon.png">
+                    <p>如何替换成历史图标？</p>
+                    <p>如果您喜欢之前的图标，可以手动下载图标文件，通过内置的文档说明即可替换。</p>
+                    <div class="download"><a href="#" style="color: gray">现在下载</a></div>
+                </div>
+            </div>
+            <p>)</p>
+        </div>
+        <p style="line-height: 2.5em; color: gray; ">
+            由于安卓系统和 Mac 连接时，传输和管理文件的方式都较为简陋，所以我们精心为您开发了 HandShaker<br>
+            使您在 Mac 上也可以方便自如地管理您在 Android 手机中的内容<br>
+            按文件类型智能为您整理您手机中的照片、音乐和视频，您还可以通过它对手机中的内容进行编辑操作
+        </p>
+        <div class="mac_download">
+            <div>
+                <a class="dmg">直接下载安装</a>
+                <p>2016.06.23 已更新至 v1.1.0</p>
+            </div>
+            <div class="tips"></div>
+            <div>
+                <a class="appstore">&nbsp;</a>
+                <p>2016.07.01 已更新至 v1.1.0</p>
+            </div>
+        </div>
+        <div style="margin-bottom: 154px;">
+            <div class="slide">
+                <div class="macbook">
+                    <img id="image_1" src="image/macbook-1.jpg">
+                    <img id="image_2" src="image/macbook-2.jpg">
+                    <img id="image_3" src="image/macbook-3.jpg">
+                    <img id="image_4" src="image/macbook-4.jpg">
+                </div>
+                <div class="phone">
+                    <img id="image_11" src="image/phone-1.jpg">
+                    <img id="image_22" src="image/phone-2.jpg">
+                    <img id="image_33" src="image/phone-3.jpg">
+                    <img id="image_44" src="image/phone_4.jpg">
+                </div>
+            </div>
+        </div>
+        <div style="background-image: linear-gradient(#fafafa,#ededed);">
+            <div class="features"
+                 style="text-align: left; padding-bottom: 100px;padding-top: 100px;">
+                <div style="float: left">
+                    <p style="border-bottom: 1px solid #e1e1e1; margin-bottom: 20px;padding-bottom: 20px;font-size: 18px;">
+                        HandShaker v1.1.0 新版特性
+                    </p>
+                    <p style="font-size: 12px">
+                        更新时间 2016 - 06 - 23
+                    </p>
+                </div>
+                <ul style="list-style: disc; text-align: left;display: inline-block;margin-left: 80px;line-height: 2.5em;font-size: 13px;">
+                    <li>新增：在 Mac 上直接播放手机中的音乐</li>
+                    <li>新增：全新设计的专辑视图</li>
+                    <li>新增：支持按艺术家浏览歌曲</li>
+                    <li>优化：取消导入导出按钮，导入时支持直接粘贴 Mac 剪切板中的文件</li>
+                    <li>优化：调整目录导航条位置，新增返回按钮</li>
+                    <li>优化：其他多处交互细节调整</li>
+                    <li>优化：修复 bug 若干，提高稳定性</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="footer">
+    <div id="contact" style="height:180px">
+        <dl>
+            <dt>订单服务</dt>
+            <dd><a href="./support/buy.html" class="contact_url">购买指南</a></dd>
+            <dd><a href="./support/pay.html" class="contact_url">支付方式</a></dd>
+            <dd><a href="./support/express.html" class="contact_url">送货政策</a></dd>
+        </dl>
+        <dl>
+            <dt>服务支持</dt>
+            <dd><a href="#" class="contact_url">售后服务</a></dd>
+            <dd><a href="#" class="contact_url">维修门店</a></dd>
+            <dd><a href="#" class="contact_url">零售门店</a></dd>
+        </dl>
+        <dl>
+            <dt>媒体中心</dt>
+            <dd><a href="#" class="contact_url">新闻动态</a></dd>
+            <dd><a href="#" class="contact_url">官方视频</a></dd>
+            <dd><a href="#" class="contact_url">图片资源</a></dd>
+        </dl>
+        <dl>
+            <dt>关于公司</dt>
+            <dd><a href="#" class="contact_url">公司简介</a></dd>
+            <dd><a href="#" class="contact_url">加入我们</a></dd>
+            <dd><a href="#" class="contact_url">联系我们</a></dd>
+        </dl>
+        <dl>
+            <dt>关注我们</dt>
+            <dd><a href="#" class="contact_url">新浪微博</a></dd>
+            <dd><a href="#" class="contact_url">官方微信</a></dd>
+            <dd><a href="#" class="contact_url">官方贴吧</a></dd>
+        </dl>
+        <div id="tel_number">
+            <a href="tel:400-619-0909" style="font-size: 34px; cursor: default; text-decoration: none; color: #757575;">400-619-0909</a>
+        </div>
+    </div>
+    <!--<hr style="clear: both; width: 1120px; margin: 0 auto;color: #ededed">-->
+    <div id="com_info">
+        <div class="info" style="font-size: 12px">
+            Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司 | <a>法律声明</a> | 隐私条款 |
+            开发者中心<br>
+            <a>京ICP备14041720号-1京ICP证140622号京公网安备11010502025474</a>
+        </div>
+    </div>
+</div>
+<div id="top_button" onclick="window.location.href='javascript:scroll(0,0)'">TOP</div>
+</body>
+</html>

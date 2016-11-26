@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#ad_3v").remove();
+            var i = 0;
+            var width = 300;
+            $(".dot1").css("background-position", "0 -12px");
+            $(".dotNumber").text(i);
+            var changeDot = function (i) {
+                $(".slide").animate({left: "-" + i * width + "px"}, 500);
+                $(".dotNumber").text(i);
+                if (i == 0) {
+                    $(".dot1").siblings().css("background-position", "0 0 ");
+                    $(".dot1").css("background-position", "0 -12px");
+                } else if (i == 1) {
+                    $(".dot2").siblings().css("background-position", "0 0 ");
+                    $(".dot2").css("background-position", "0 -12px");
+                } else if (i == 2) {
+                    $(".dot3").siblings().css("background-position", "0 0 ");
+                    $(".dot3").css("background-position", "0 -12px");
+                } else if (i == 3) {
+                    $(".dot4").siblings().css("background-position", "0 0 ");
+                    $(".dot4").css("background-position", "0 -12px");
+                }
+            }
+            var change1 = setInterval(function () {
+                changeDot(i);
+                i++;
+                if (i == 4) {
+                    i = 0;
+                }
+            }, 3000);
+            $.each($(".dot_image").children(), function (index, value) {
+                $(this).click(function () {
+                    clearInterval(change1);
+                    $(this).siblings().css("background-position", "0 0");
+                    $(this).css("background-position", "0 -12px");
+                    var number = parseInt(index);
+                    changeDot(index);
+                    i = index;
+                    change1 = setInterval(function () {
+                        changeDot(i);
+                        i = i + 1;
+                        if (i == 4) {
+                            i = 0;
+                        }
+                    }, 3000);
+                })
+            })
+            $(".next_button").click(function () {
+                if (!$(".slide").is(":animated")) {
+                    clearInterval(change1);
+                    changeDot(i);
+                    i++;
+                    if (i == 4) {
+                        i = 0;
+                    }
+                    change1 = setInterval(function () {
+                        changeDot(i);
+                        i = i + 1;
+                        if (i == 4) {
+                            i = 0;
+                        }
+                    }, 3000);
+                }
+            })
+        });
+        $(function () {
+            var other = $('ul li:gt(4):not(:last)');//取ul下li元素中索引大于4的元素，但不包括最后一个
+            other.hide();
+            var button = $('.toggleButton');
+            button.click(function () {
+                if (other.is(':visible')) {//存在的话
+                    other.hide();
+                    $(this).css("background-color", "cadetblue")
+                            .text("显示");
+                } else {
+                    other.show();
+                    $(this).css("background-color", "red").text("隐藏");
+                }
+            })
+        });
+        $(function () {
+            $(".link_1").mouseover(function (e) {
+                this.ititle = this.title;
+                this.title = "";
+                var tip = "<div id='tip'>" + this.ititle + "</div>";
+                $("body").append(tip);
+                $("#tip").css({
+                    "position": "absolute",
+                    "border": "1px solid #dedede",
+                    "background": "#fafafa",
+                    "top": (e.pageY + 10) + "px",
+                    "left": (e.pageX + 10) + "px"
+                }).show("fast");
+            }).mouseout(function () {
+                this.title = this.ititle;
+                $("#tip").remove();
+            }).mousemove(function (e) {
+                $("#tip").css({
+                    "position": "absolute",
+                    "top": (e.pageY + 10) + "px",
+                    "left": (e.pageX + 10) + "px"
+                });
+            })
+        });
+        $(function () {
+            $(".image").mouseover(function (e) {
+                var image0 = "<img class='image0' src='image/image0.png'>";
+                $("body").append(image0);
+                $(".image0").css({
+                    "width": "300px",
+                    "height": "300px",
+                    "position": "absolute",
+                    "border": "1px solid #dedede",
+                    "top": (e.pageY + 10) + "px",
+                    "left": (e.pageX + 10) + "px",
+                    "opacity": "0.9"
+                }).show();
+            }).mouseout(function () {
+                $(".image0").remove();
+            }).mousemove(function (e) {
+                $(".image0").css({
+                    "position": "absolute",
+                    "top": (e.pageY + 10) + "px",
+                    "left": (e.pageX + 10) + "px"
+                });
+            })
+        });
+        $(function () {
+            $(".button1").click(function () {
+                if ($(".content").css("display") == "none") {
+//                    $(".content").show(1000);
+                    $(".content").fadeIn();
+                    $(this).text("点我消失");
+                } else {
+//                    $(".content").hide(1000);
+                    $(".content").fadeOut();
+                    $(this).text("点我显示");
+                }
+            });
+            $(".button2").click(function () {
+                if ($(".content").css("display") == "none") {
+                    $(".content").show(1000);
+//                    $(".content").fadeIn();
+                    $(this).text("点我隐藏");
+                } else {
+                    $(".content").hide(1000);
+//                    $(".content").fadeOut();
+                    $(this).text("点我显示");
+                }
+            });
+            $(".button3").click(function () {
+//                var i = 1;
+                if ($(".content").attr("style") == "height: 0px;") {
+                    $(".content").animate({height: "100px"}, 1000);
+//                    $(".content").fadeIn();
+                    $(this).text("点我隐藏");
+//                    i = 1;
+                } else {
+                    $(".content").animate({height: "0"}, 1000);
+//                    $(".content").hide(1000);
+//                    $(".content").fadeOut();
+                    $(this).text("点我显示");
+//                    i = 0;
+                }
+            });
+        });
+        $(function () {
+            $(".yellow").click(function () {
+                $(this).removeClass();
+                $(this).siblings().removeClass();
+                $(this).addClass("yellow");
+                $(this).siblings().addClass("yellow");
+            });
+            $(".red").click(function () {
+                $(this).removeClass();
+                $(this).siblings().removeClass();
+                $(this).addClass("red");
+                $(this).siblings().addClass("red");
+            });
+            $(".green").click(function () {
+                $(this).removeClass();
+                $(this).siblings().removeClass();
+                $(this).addClass("green");
+                $(this).siblings().addClass("green");
+            });
+            $(".blue").click(function () {
+                $(this).removeClass();
+                $(this).siblings().removeClass();
+                $(this).addClass("blue");
+                $(this).siblings().addClass("blue");
+            });
+        });
+        $(function () {
+            var pos = $(".nav").offset().top;
+//                var winPos = $(window).scrollTop();
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= pos) {
+                    $(".nav").css({"position": "fixed", "top": "0"});
+                    $(".nav_bg").css({"display": "block"});
+                } else {
+                    $(".nav").css({"position": "static"});
+                    $(".nav_bg").css({"display": "none"});
+                }
+            });
+        });
+        $(function () {
+            $(".move").mouseover(function () {
+                $(".fontColor").css({"transition": "all 0.25s"});
+                $(".blur").css({"transition": "all 0.25s"});
+                $(".colorFont").css({"transition": "all 0.25s"});
+            }).mousemove(function (e) {
+                $(".fontColor").css({
+                    "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.0333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01211 - 6) + "deg)"
+                });
+                $(".colorFont").css({
+                    "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.0333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01211 - 6) + "deg)"
+                });
+                $(".blur").css({
+                    "opacity": "1",
+                    "transform": "translate3d("
+                    + (-e.originalEvent.offsetX * 0.02 + 10) + "px,"
+                    + (-e.originalEvent.offsetY * 0.04 + 10) + "px," + "0px" + ")"
+                });
+                setTimeout(function () {
+                    $(".fontColor").css({"transition": "transform 0.05s"});
+                    $(".blur").css({"transition": "transform 0.05s"});
+                    $(".colorFont").css({"transition": "transform 0.05s"});
+                }, 500);
+            })
+                    .mouseleave(function () {
+                        $(".fontColor").css({
+                            "transition": "all 0.25s",
+                            "transform": "rotateX(0deg) rotateY(0deg)"
+                        });
+                        $(".blur").css({
+                            "transition": "all 0.25s",
+                            "opacity": "0.5",
+                            "transform": "translate3d(0px, 0px, 0px)"
+                        });
+                        $(".colorFont").css({
+                            "transition": "all 0.25s",
+                            "transform": "rotateX(0deg) rotateY(0deg)"
+                        });
+                    });
+//            $(".blur").mousemove(function (e) {
+//                $(this).css({"transform": "translate3d("
+//                + (-e.originalEvent.offsetX * 0.06 + 30) + "px,"
+//                + (-e.originalEvent.offsetY * 0.12 + 15) + "px," + "0px" + ")"})
+//            })
+        });
+    </script>
+    <style>
+        a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 1202px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            width: 320px;
+            border: 1px solid #ededed;
+            overflow: hidden;
+            margin: 10px auto;
+        }
+
+        li {
+            float: left;
+            padding: 20px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: cadetblue;
+            border: 0 solid #ffffff;
+            border-radius: 6px;
+            outline: 0;
+        }
+
+        .content {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: cadetblue;
+        }
+
+        .slide_image {
+            width: 300px;
+            height: 222px;
+            margin: 10px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            height: 222px;
+            width: 1200px;
+            top: 0;
+            left: 0px;
+        }
+
+        .image1 {
+            width: 300px;
+            height: 222px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .image2 {
+            width: 300px;
+            height: 222px;
+            position: absolute;
+            left: 300px;
+            top: 0;
+        }
+
+        .image3 {
+            width: 300px;
+            height: 222px;
+            position: absolute;
+            left: 600px;
+            top: 0;
+        }
+
+        .image4 {
+            width: 300px;
+            height: 222px;
+            position: absolute;
+            left: 900px;
+            top: 0;
+        }
+
+        .dot {
+            height: 100px;
+            width: 100px;
+        }
+
+        .dot_image {
+            position: absolute;
+            z-index: 1;
+            /*width: 12px;*/
+            /*height: 48px;*/
+            left: 36%;
+            bottom: 10px;
+        }
+
+        .dot_image a {
+            display: inline-block;
+            background: url("image/dot.png");
+            width: 12px;
+            height: 12px;
+            background-position: 0 0;
+        }
+
+        .dot1 {
+            background-position: 0 -12px;
+        }
+
+        .next_button {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background: #ededed;
+            opacity: 0.6;
+            border: 0 solid #ffffff;
+            z-index: 1;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .move {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            transition: transform 1s ease-in-out;
+        }
+
+        .fontColor {
+            position: absolute;
+            background-color: #555;
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #cdcdcd;
+            border-radius: 8px;
+            z-index: -98;
+        }
+
+        .blur {
+            position: relative;
+            height: 460px;
+            width: 960px;
+            left: 20px;
+            top: 20px;
+            box-shadow: 0 0 80px #333;
+            z-index: -99;
+            opacity: 0.5;
+        }
+
+        .colorFont {
+            position: relative;
+            top: -459px;
+            width: 1000px;
+            height: 500px;
+            z-index: -1;
+            vertical-align: middle;
+        }
+
+        .nav {
+            width: 100%;
+            height: 52px;
+            background: url("image/logo.gif") no-repeat;
+            background-color: #1d3e81;
+            background-position: 10px;
+            z-index: 3;
+        }
+
+        .nav_bg {
+            display: none;
+            width: 100%;
+            height: 52px;
+        }
+
+        .colorFont {
+            /*margin: 10px auto;*/
+            /*padding: 20px;*/
+            font-size: 50px;
+            /*opacity: 0.8;*/
+            text-shadow: #666 0px 1px 10px;
+            cursor: default;
+            /*width: 800px;*/
+        }
+
+        .foot {
+            margin-top: 50px;
+            height: 50px;
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>...</li>
+    </ul>
+</div>
+<button class="toggleButton">显示</button>
+<div class="nav"></div>
+<div class="nav_bg"></div>
+<p><a title="link_1" class="link_1">link_1</a></p>
+<p><a title="link_2" class="link_2">link_2</a></p>
+<div><img class="image" src="image/image.png"></div>
+<div><p class="content">正文</p></div>
+<button class="button1">点我消失</button>
+<button class="button2">点我隐藏</button>
+<button class="button3">点我隐藏</button>
+<div class="slide_image">
+    <div class="slide">
+        <div class="image1"><img src="image/image1.png"></div>
+        <div class="image2"><img src="image/image2.png"></div>
+        <div class="image3"><img src="image/image3.png"></div>
+        <div class="image4"><img src="image/image4.png"></div>
+    </div>
+    <div class="dot_image">
+        <a index="1" class="dot1"></a>
+        <a index="2" class="dot2"></a>
+        <a index="3" class="dot3"></a>
+        <a index="4" class="dot4"></a>
+    </div>
+    <button class="next_button">&gt;</button>
+</div>
+<div class="dot" style="margin: 10px auto;">
+    <p class="dotNumber"></p>
+</div>
+<div class="move">
+    <div class="fontColor"></div>
+    <div class="blur"></div>
+    <div class="colorFont">
+        <p>黄色黄色黄色黄色黄色黄色黄色黄色</p>
+        <p>红色红色红色红色红色红色红色红色</p>
+        <p>绿色绿色绿色绿色绿色绿色绿色绿色</p>
+        <p>蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色</p>
+    </div>
+</div>
+<!--<div class="colorFont">-->
+<!--<p class="yellow">黄色黄色黄色黄色黄色黄色黄色黄色</p>-->
+<!--<p class="red">红色红色红色红色红色红色红色红色</p>-->
+<!--<p class="green">绿色绿色绿色绿色绿色绿色绿色绿色</p>-->
+<!--<p class="blue">蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色</p>-->
+<!--</div>-->
+<div class="foot"></div>
+</body>
+</html>

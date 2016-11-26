@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onevoL·Resume</title>
+    <meta name="viewport"
+          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            $(".gif").mouseover(function (e) {
+                var gif = "<img class='android1' src='image/gif.gif'>";
+                $("#main").append(gif);
+                $(".android1").css({"top": (e.pageY - 325) + "px", "left": (e.pageX + 100) + "px"}).show();
+            }).mouseout(function () {
+                $(".android1").remove();
+            }).mousemove(function (e) {
+                $(".android1").css({"top": (e.pageY - 325) + "px", "left": (e.pageX + 100) + "px"}).show();
+            });
+            $(".jpg").mouseover(function (e) {
+                var jpg = "<img class='android2' src='image/jpg.jpg'>";
+                $("#main").append(jpg);
+                $(".android2").css({"top": (e.pageY - 370) + "px", "left": (e.pageX + 100) + "px"}).show();
+            }).mouseout(function () {
+                $(".android2").remove();
+            }).mousemove(function (e) {
+                $(".android2").css({"top": (e.pageY - 370) + "px", "left": (e.pageX + 100) + "px"}).show();
+            });
+            $(".link").mouseover(function (e) {
+                var png = "<img class='android3' src='image/Smartisan.png'>";
+                $("#main").append(png);
+                $(".android3").css({"top": (e.pageY - 250) + "px", "left": (e.pageX + 100) + "px"}).show();
+            }).mouseout(function () {
+                $(".android3").remove();
+            }).mousemove(function (e) {
+                $(".android3").css({"top": (e.pageY - 250) + "px", "left": (e.pageX + 100) + "px"}).show();
+            });
+            $(".contact").mouseover(function () {
+                var wechat = "<div class='weixin'><img src='image/wechat.png' class='wechat'></div>";
+                $("#main").append(wechat);
+                $(".doge").attr("src", "image/doge1.png");
+            }).mouseout(function () {
+                $(".weixin").remove();
+                $(".doge").attr("src", "image/doge.png");
+            });
+
+            $(".gif").click(function () {
+                $(".android1").remove();
+                $(".info").hide();
+                var pic = "<div class='full'><img class='fullPic' src='image/gif.gif'></div>";
+                $("#main").append(pic);
+                $(".full").css({
+                    "position": "fixed",
+                    "left": "0",
+                    "top": "0",
+                    "width": "100%",
+                    "height": "100%",
+                    "background": "#000",
+                    "opacity": "0.98",
+                    "text-align": "center",
+//                    "vertical-align": "middle"
+                }).show();
+                $(".fullPic").css({"height": "100%"});
+                $(".full").click(function () {
+                    $(".full").remove();
+                    $(".info").show();
+//                    $("body").css({overflow:"visible"});/*启用滑动条*/
+                });
+//                $("body").css({overflow:"hidden"});/*禁止滑动条*/
+            });
+            $(".jpg").click(function () {
+                $(".android2").remove();
+                $(".info").hide();
+                var pic = "<div class='full'><img class='fullPic' src='image/jpg.jpg'></div>";
+                $("#main").append(pic);
+                $(".full").css({
+                    "position": "absolute",
+                    "left": "0",
+                    "top": "0",
+                    "width": "100%",
+                    "height": "100%",
+                    "background": "#000",
+                    "opacity": "0.98",
+                    "text-align": "center",
+//                    "vertical-align": "middle"
+                }).show();
+                $(".fullPic").css({"height": "100%"})
+                $(".full").click(function () {
+                    $(".full").remove()
+                    $(".info").show();
+//                    $("body").css({overflow:"visible"});/*启用滑动条*/
+                });
+//                $("body").css({overflow:"hidden"});/*禁止滑动条*/
+            });
+            setTimeout(function () {
+                $(".works").css({"margin-left": "0", "opacity": "1"});
+                $(".smartisan").css({"margin-left": "0", "opacity": "1"});
+                $(".h3").css({"margin-left": "0", "opacity": "1"});
+                $(".contact").css({"margin-left": "0", "opacity": "1"});
+            }, 500);
+
+        });
+
+    </script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.6);
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        #photo {
+            width: 800px;
+            height: 800px;
+            position: fixed;
+            z-index: -99;
+            bottom: -20px;
+            left: 650px;
+            background: url("image/photo.jpg") no-repeat;
+            /*background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1));*/
+            background-size: 800px 800px;
+            filter: alpha(opacity=0, finishopacity=10,
+            style=1, startX=650, startY=0, finishX=1260, finishY=0);
+            /*opacity: 0.08;*/
+        }
+
+        #photo1 {
+            width: 800px;
+            height: 800px;
+            position: fixed;
+            z-index: -98;
+            bottom: -20px;
+            left: 649px;
+            /*background: url("image/photo.jpg") no-repeat;*/
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+            background-size: 800px 800px;
+            /*filter: alpha(opacity=0, finishopacity=10,*/
+            /*style=1, startX=650, startY=0, finishX=1260, finishY=0);*/
+            /*opacity: 0.08;*/
+        }
+
+        #main {
+            padding: 0 200px;
+            margin: 0 20px;
+            border-left: 1px solid #ccc;
+        }
+
+        .name {
+            font-size: 60px;
+            color: #ccc;
+            text-shadow: 0 0 8px #eee;
+        }
+
+        .android1, .android2, .android3 {
+            max-height: 582px;
+            height: 100%;
+            position: fixed;
+        }
+
+        .gif, .jpg {
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .link {
+            text-decoration: none;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+            /*淡入淡出 ease-out 减速*/
+        }
+
+        .link:hover {
+            text-decoration: none;
+            color: #6b95ea;
+            -moz-transition: all .15s ease-out;
+            -webkit-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        .works, .smartisan, .contact, .h3 {
+            margin-left: 50px;
+            opacity: 0.01;
+            -moz-transition: all .8s ease-out;
+            -webkit-transition: all .8s ease-out;
+            -o-transition: all .8s ease-out;
+            transition: all 0.8s ease-out;
+        }
+
+        .weixin {
+            width: 220px;
+            height: 120px;
+            border: 1px solid #000;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .wechat {
+            width: 200px;
+            height: 100px;
+            margin: 10px 10px 0 10px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .weixin:after, .weixin:before {
+            content: ' ';
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: -19px;
+            left: 20px;
+            border: 10px solid transparent;
+            border-bottom-color: #ffffff;
+        }
+
+        .weixin:before {
+            top: -20px;
+            border-bottom-color: #000;
+        }
+
+        @media (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+            /*iphone6*/
+            #main {
+                padding: 0 20px;
+                margin: 0 20px;
+                border-left: 1px solid #ccc;
+            }
+
+            #photo {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                z-index: -99;
+                top: 54px;
+                left: 255px;
+                background: url("image/head.png") no-repeat;
+                background-size: 80px 80px;
+                opacity: 0.9;
+                border: 1px solid rgba(111, 111, 111, 0.5);
+                border-radius: 40px;
+                box-shadow: 0 1px 10px rgba(111, 111, 111, 0.8);
+            }
+
+            #photo1 {
+                background-size: 0 0;
+                width: 0;
+                height: 0;
+                top: 0px;
+                left: 0px;
+            }
+
+            .works, .smartisan, .contact, .h3 {
+                opacity: 0.01;
+                -moz-transition: all .8s ease-out;
+                -webkit-transition: all .8s ease-out;
+                -o-transition: all .8s ease-out;
+                transition: all 0.8s ease-out;
+            }
+
+            /*.android1, .android2, .android3 {*/
+            /*display: none;*/
+            /*}*/
+        }
+
+        @media (min-device-width: 360px) and (max-device-width: 640px) {
+            #main {
+                padding: 0 20px;
+                margin: 0 20px;
+                border-left: 1px solid #ccc;
+            }
+
+            #photo {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                z-index: -99;
+                top: 54px;
+                left: 255px;
+                background: url("image/head.png") no-repeat;
+                background-size: 80px 80px;
+                opacity: 0.9;
+                border: 1px solid rgba(111, 111, 111, 0.5);
+                border-radius: 40px;
+                box-shadow: 0 1px 10px rgba(111, 111, 111, 0.8);
+            }
+
+            #photo1 {
+                background-size: 0 0;
+                width: 0;
+                height: 0;
+                top: 0px;
+                left: 0px;
+            }
+
+            .jpg {
+                display: block;
+                width: 80px;
+            }
+
+            .works, .smartisan, .contact, .h3 {
+                opacity: 0.01;
+                -moz-transition: all .8s ease-out;
+                -webkit-transition: all .8s ease-out;
+                -o-transition: all .8s ease-out;
+                transition: all 0.8s ease-out;
+            }
+        }
+
+        @media (device-height: 568px) and (max-device-width: 568px) {
+            /* 兼容iphone5,因为5和4的屏幕宽度一样 */
+            #main {
+                padding: 0 20px;
+                margin: 0 20px;
+                border-left: 1px solid #ccc;
+            }
+
+            .name {
+                font-size: 50px;
+            }
+
+            #photo {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                z-index: -99;
+                top: 35px;
+                left: 215px;
+                background: url("image/head.png") no-repeat;
+                background-size: 80px 80px;
+                opacity: 0.9;
+                border: 1px solid rgba(111, 111, 111, 0.5);
+                border-radius: 40px;
+                box-shadow: 0 1px 10px rgba(111, 111, 111, 0.5);
+            }
+
+            #photo1 {
+                background-size: 0 0;
+                width: 0;
+                height: 0;
+                top: 0px;
+                left: 0px;
+            }
+
+            .gif, .jpg {
+                display: block;
+                width: 80px;
+            }
+
+            .full {
+                position: fixed;
+            }
+
+            .works, .smartisan, .contact, .h3 {
+                opacity: 0.01;
+                -moz-transition: all .8s ease-out;
+                -webkit-transition: all .8s ease-out;
+                -o-transition: all .8s ease-out;
+                transition: all 0.8s ease-out;
+            }
+
+            /*.android1, .android2, .android3 {*/
+            /*display: none;*/
+            /*}*/
+        }
+
+        @media only screen and (min-width: 1024px) and (max-width: 1024px) {
+            /*ipad横屏*/
+            #photo {
+                width: 800px;
+                height: 800px;
+                position: fixed;
+                z-index: -99;
+                bottom: -20px;
+                left: 430px;
+                background: url("image/photo.jpg") no-repeat;
+                background-size: 800px 800px;
+                filter: alpha(opacity=0, finishopacity=10,
+                style=1, startX=650, startY=0, finishX=1260, finishY=0);
+            }
+
+            #photo1 {
+                width: 800px;
+                height: 800px;
+                position: fixed;
+                z-index: -98;
+                bottom: -20px;
+                left: 429px;
+                background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+                background-size: 800px 800px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) and (min-width: 768px) {
+            /*ipad竖屏*/
+            #photo {
+                width: 800px;
+                height: 800px;
+                position: fixed;
+                z-index: -99;
+                top: 0px;
+                left: 300px;
+                background: url("image/photo.jpg") no-repeat;
+                background-size: 800px 800px;
+                filter: alpha(opacity=0, finishopacity=10,
+                style=1, startX=650, startY=0, finishX=1260, finishY=0);
+            }
+
+            #photo1 {
+                width: 800px;
+                height: 800px;
+                position: fixed;
+                z-index: -98;
+                top: 0px;
+                left: 299px;
+                background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+                background-size: 800px 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="photo1"></div>
+<div id="photo"></div>
+<div id="main">
+    <div class="info">
+        <p class="name">onevol</p>
+        <p class="works"><a href="jquery.html">示例一</a></p>
+        <p class="smartisan">山寨过锤子科技 <a href="smartisan.html" class="link">首页</a><span class="link"></span></p>
+        <p class="h3">额外兴趣</p>
+        <p class="works">做过android引导页<span class="gif"> 悬停查看</span></p>
+        <p class="works">做过android天气计算器<span class="jpg"> 悬停查看</span></p>
+        <p class="contact" style="display:block; height: 50px; width: 126px; line-height: 65px; cursor: pointer">
+            wechat<img
+                class="doge" src="image/doge.png" style="float: right; height: 50px"></p>
+
+    </div>
+</div>
+</body>
+</html>

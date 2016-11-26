@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#content").mousemove(function (e) {
+                $(".pic").css({"left": 350 -  (e.pageX * 0.05) + "px", "top": - e.pageY * 0.05 + "px"});
+            })
+        })
+    </script>
+    <style>
+        #content {
+            width: 1250px;
+            height: 500px;
+            position: relative;
+        }
+
+        .pic {
+            position: absolute;
+            left: 350px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="pic">
+        <img src="image/logo.png" style="width: 500px">
+    </div>
+</div>
+</body>
+</html>

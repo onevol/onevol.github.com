@@ -1,0 +1,39 @@
+#top_button {
+    color: #a9a9a9;
+    text-align: center;
+    line-height: 64px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #fafafa;
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.2);
+    opacity: .6;
+    cursor: pointer;
+    z-index: 10;
+    /*display: none;*/
+    /*transform: translate3d(0,120px,0);*/
+    /*-moz-transition: all .15s ease-out;*/
+    /*-webkit-transition: all .15s ease-out;*/
+    /*-o-transition: all .15s ease-out;*/
+    /*transition: all 0.15s ease-out;*/
+    -ms-transform: translate(0,120px);
+    -webkit-transform: translate3d(0,160px,0);
+    transform: translate3d(12px,160px,0);
+    -webkit-transition: all .25s cubic-bezier(.215,.61,.355,1);
+    -moz-transition: all .25s cubic-bezier(.215,.61,.355,1);
+    transition: all .25s cubic-bezier(.215,.61,.355,1);
+    /*淡入淡出*/
+}
+
+#top_button:hover {
+    opacity: 1;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all 0.15s ease-out;
+    /*淡入淡出*/
+}

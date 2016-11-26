@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tool</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        function empty() {
+            $("#text").val("");
+        }
+
+        function add() {
+            var text = $("#text").val();
+            var textArr = text.split("\n");
+            var str = "";
+            for (var i = 0; i < textArr.length; i++) {
+                str +=
+                        textArr[i] + ",加\n" +
+                        "加," + textArr[i] + "\n" +
+                        textArr[i] + ",售\n" +
+                        "售," + textArr[i] + "\n" +
+                        textArr[i] + ",q\n" +
+                        "q," + textArr[i] + "\n" +
+                        textArr[i] + ",+\n" +
+                        "+," + textArr[i] + "\n" +
+                        textArr[i] + ",扣\n" +
+                        "扣," + textArr[i] + "\n" +
+                        textArr[i] + ",w\n" +
+                        "w," + textArr[i] + "\n" +
+                        textArr[i] + ",v\n" +
+                        "v," + textArr[i] + "\n" +
+                        textArr[i] + ",卫,星\n" +
+                        "卫,星," + textArr[i] + "\n" +
+                        textArr[i] + ",私\n" +
+                        "私," + textArr[i] + "\n" +
+                        textArr[i] + ",微\n" +
+                        "微," + textArr[i] + "\n" +
+                        textArr[i] + ",进\n" +
+                        "进," + textArr[i] + "\n" +
+                        textArr[i] + ",群\n" +
+                        "群," + textArr[i] + "\n" +
+                        textArr[i] + ",关,注\n" +
+                        "关,注," + textArr[i] + "\n" +
+                        textArr[i] + ",点,击\n" +
+                        "点,击," + textArr[i] + "\n" +
+                        textArr[i] + ",头,像\n" +
+                        "头,像," + textArr[i] + "\n" +
+                        textArr[i] + ",点,我\n" +
+                        "点,我," + textArr[i] + "\n" +
+                        textArr[i] + ",签,名\n" +
+                        "签,名," + textArr[i] + "\n" +
+                        textArr[i] + ",代,理\n" +
+                        "代,理," + textArr[i] + "\n" +
+                        textArr[i] + ",资,料\n" +
+                        "资,料," + textArr[i] + "\n" +
+                        textArr[i] + ",信\n" +
+                        "信," + textArr[i] + "\n" +
+                        textArr[i] + ",┼\n" +
+                        "┼," + textArr[i] + "\n" +
+                        textArr[i] + ",╂\n" +
+                        "╂," + textArr[i] + "\n" +
+                        textArr[i] + ",┽\n" +
+                        "┽," + textArr[i] + "\n" +
+                        textArr[i] + ",┾\n" +
+                        "┾," + textArr[i] + "\n" +
+                        textArr[i] + ",╂\n" +
+                        "╂," + textArr[i] + "\n" +
+                        textArr[i] + ",╀\n" +
+                        "╀," + textArr[i] + "\n" +
+                        textArr[i] + ",┿\n" +
+                        "┿," + textArr[i] + "\n" +
+                        textArr[i] + ",╁\n" +
+                        "╁," + textArr[i] + "\n" +
+                        textArr[i] + ",╃\n" +
+                        "╃," + textArr[i] + "\n" +
+                        textArr[i] + ",╋\n" +
+                        "╋," + textArr[i] + "\n" +
+                        textArr[i] + ",╪\n" +
+                        "╪," + textArr[i] + "\n" +
+                        textArr[i] + ",╬\n" +
+                        "╬," + textArr[i] + "\n" +
+                        textArr[i] + ",╄\n" +
+                        "╄," + textArr[i] + "\n" +
+                        textArr[i] + ",╅\n" +
+                        "╅," + textArr[i] + "\n" +
+                        textArr[i] + ",╆\n" +
+                        "╆," + textArr[i] + "\n" +
+                        textArr[i] + ",0|1|2|3|4|5|6|7|8|9\n" +
+                        "0|1|2|3|4|5|6|7|8|9," + textArr[i] + "\n" +
+                        textArr[i] + ",a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z\n" +
+                        "a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z," + textArr[i] + "\n"
+                ;
+            }
+            $("#out").text(str);
+            $("#count").text(str.split("\n").length - 1);
+        }
+
+        function add2() {
+            var text = $("#text").val();
+            var textArr = text.split("");
+            var str = "";
+            for (var i = 0; i < textArr.length; i++) {
+                str +=  "," + textArr[i];
+                str = str.replace(",\n,", "\n");
+            }
+            str = str.substring(1, str.length - 2);
+            $("#out").text(str);
+            $("#count").text(str.split("\n").length - 1);
+        }
+
+        function add3() {
+            var text = $("#text").val();
+            var key = $("#addKey").val();
+            var textArr = text.split("\n");
+            var str = "";
+            for (var i = 0; i < textArr.length; i++) {
+                str +=  key + "," + textArr[i] + "\n" +
+                        textArr[i] + "," + key + "\n";
+            }
+            $("#out").text(str);
+            $("#count").text(str.split("\n").length - 1);
+        }
+
+        function rep() {
+//            替换
+            var text = $("#text").val();
+//            text = text.replace("\n", "");
+            var textArr = text.split("，");
+            var str = "";
+            for (var i = 0; i < textArr.length; i++) {
+                str +=  textArr[i] + "\n";
+            }
+            $("#out").text(str);
+            $("#count").text(textArr.length - 1);
+        }
+
+        function get() {
+            var text = $("#text").val();
+            var textArr = text.split("</a>");
+            var str = "";
+            for (var i = 0; i < textArr.length; i++) {
+                textArr[i] = textArr[i].substring(textArr[i].indexOf(">")+1, textArr[i].length);
+                str += textArr[i] + "\n";
+            }
+            $("#out").text(str);
+            $("#count").text(textArr.length - 1);
+        }
+
+        function copyToClipboard(elem) {
+            // create hidden text element, if it doesn't already exist
+//            复制textarea内容到粘贴板
+            var targetId = "_hiddenCopyText_";
+            var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+            var origSelectionStart, origSelectionEnd;
+            if (isInput) {
+                // can just use the original source element for the selection and copy
+                target = elem;
+                origSelectionStart = elem.selectionStart;
+                origSelectionEnd = elem.selectionEnd;
+            } else {
+                // must use a temporary form element for the selection and copy
+                target = document.getElementById(targetId);
+                if (!target) {
+                    var target = document.createElement("textarea");
+                    target.style.position = "absolute";
+                    target.style.left = "-9999px";
+                    target.style.top = "0";
+                    target.id = targetId;
+                    document.body.appendChild(target);
+                }
+                target.textContent = elem.textContent;
+            }
+            // select the content
+            var currentFocus = document.activeElement;
+            target.focus();
+            target.setSelectionRange(0, target.value.length);
+
+            // copy the selection
+            var succeed;
+            try {
+                succeed = document.execCommand("copy");
+            } catch (e) {
+                succeed = false;
+            }
+            // restore original focus
+            if (currentFocus && typeof currentFocus.focus === "function") {
+                currentFocus.focus();
+            }
+
+            if (isInput) {
+                // restore prior selection
+                elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+            } else {
+                // clear temporary content
+                target.textContent = "";
+            }
+            return succeed;
+        }
+    </script>
+</head>
+<body>
+<div style="float: left">
+    <textarea id="text" cols="30" rows="40"></textarea>
+    <button id="empty"  onclick="empty()" style="display: block">清空</button>
+</div>
+<div style="float: left;margin: 100px 20px">
+    <button id="button" onclick="add()">添加</button>
+    <button id="button2" onclick="add2()" style="display: block;">添加,</button>
+    <button id="button3" onclick="rep()" style="display: block;">格式化</button>
+    <textarea id="addKey" cols="5" rows="1" style="float:left"></textarea>
+    <button id="button4" onclick="add3()" style="">添加</button>
+    <button id="button5" onclick="get()">av名字</button>
+</div>
+<div style="float: left">
+    <textarea id="out" cols="30" rows="40"></textarea>
+</div>
+<div style="float: left; margin: 100px 20px">
+    <p>总数：<span id="count"></span></p>
+    <button id="copy" onclick="copyToClipboard(document.getElementById('out'))">复制到粘贴板</button>
+</div>
+</body>
+</html>
