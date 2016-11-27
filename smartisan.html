@@ -11,123 +11,6 @@
     <link type="text/css" rel="stylesheet" href="css/header.css">
     <link type="text/css" rel="stylesheet" href="css/footer.css">
     <link type="text/css" rel="stylesheet" href="css/top_button.css">
-    <script type="text/javascript">
-        //        var image0 = document.getElementById("image_0");
-        //        var image1 = document.getElementById("image_1");
-        //        var image2 = document.getElementById("image_2");
-        //        var image3 = document.getElementById("image_3");
-
-        var i = 0;
-        var auto = window.setInterval(function () {
-            if (i == 0) {
-                document.getElementById("image_3").style.opacity = "0";
-                document.getElementById("image_0").style.opacity = "1";
-                document.getElementById("image_3").style.zIndex = "0";
-                document.getElementById("image_0").style.zIndex = "1";
-                document.getElementById("dot_3").style.backgroundPosition = "0 0";
-                document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
-//                    i = 1;
-
-//                    window.setTimeout(change(i), 2000);
-            } else if (i == 1) {
-                document.getElementById("image_0").style.opacity = "0";
-                document.getElementById("image_1").style.opacity = "1";
-                document.getElementById("image_0").style.zIndex = "0";
-                document.getElementById("image_1").style.zIndex = "1";
-                document.getElementById("dot_0").style.backgroundPosition = "0 0";
-                document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
-//                    i = 2;
-//                    window.setTimeout(change(i), 2000);
-            } else if (i == 2) {
-                document.getElementById("image_1").style.opacity = "0";
-                document.getElementById("image_2").style.opacity = "1";
-                document.getElementById("image_1").style.zIndex = "0";
-                document.getElementById("image_2").style.zIndex = "1";
-                document.getElementById("dot_1").style.backgroundPosition = "0 0";
-                document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
-//                    i = 3;
-//                    window.setTimeout(change(i), 2000);
-            } else if (i == 3) {
-                document.getElementById("image_2").style.opacity = "0";
-                document.getElementById("image_3").style.opacity = "1";
-                document.getElementById("image_2").style.zIndex = "0";
-                document.getElementById("image_3").style.zIndex = "1";
-                document.getElementById("dot_2").style.backgroundPosition = "0 0";
-                document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
-//                    i = 0;
-//                    window.setTimeout(change(i), 2000);
-            }
-            i += 1;
-            if (i == 4) {
-                i = 0;
-            }
-        }, 3000);
-
-        function changeImage0() {
-            i = 0;
-            document.getElementById("image_0").style.opacity = "1";
-            document.getElementById("image_1").style.opacity = "0";
-            document.getElementById("image_2").style.opacity = "0";
-            document.getElementById("image_3").style.opacity = "0";
-            document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
-            document.getElementById("dot_1").style.backgroundPosition = "0 0";
-            document.getElementById("dot_2").style.backgroundPosition = "0 0";
-            document.getElementById("dot_3").style.backgroundPosition = "0 0";
-
-        }
-        function changeImage1() {
-            i = 1;
-            document.getElementById("image_0").style.opacity = "0";
-            document.getElementById("image_1").style.opacity = "1";
-            document.getElementById("image_2").style.opacity = "0";
-            document.getElementById("image_3").style.opacity = "0";
-            document.getElementById("dot_0").style.backgroundPosition = "0 0";
-            document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
-            document.getElementById("dot_2").style.backgroundPosition = "0 0";
-            document.getElementById("dot_3").style.backgroundPosition = "0 0";
-
-        }
-        function changeImage2() {
-            i = 2;
-            document.getElementById("image_0").style.opacity = "0";
-            document.getElementById("image_1").style.opacity = "0";
-            document.getElementById("image_2").style.opacity = "1";
-            document.getElementById("image_3").style.opacity = "0";
-            document.getElementById("dot_0").style.backgroundPosition = "0 0";
-            document.getElementById("dot_1").style.backgroundPosition = "0 0";
-            document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
-            document.getElementById("dot_3").style.backgroundPosition = "0 0";
-
-        }
-        function changeImage3() {
-            i = 3;
-            document.getElementById("image_0").style.opacity = "0";
-            document.getElementById("image_1").style.opacity = "0";
-            document.getElementById("image_2").style.opacity = "0";
-            document.getElementById("image_3").style.opacity = "1";
-            document.getElementById("dot_0").style.backgroundPosition = "0 0";
-            document.getElementById("dot_1").style.backgroundPosition = "0 0";
-            document.getElementById("dot_2").style.backgroundPosition = "0 0";
-            document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
-
-        }
-
-        window.onscroll = function () {
-            var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
-            if (scrollTop > 500) { //判断滚动条距离窗口顶部多远时显示出来，这里是100px
-//                document.getElementById("top_button").style.display = "block";
-                document.getElementById("top_button").style.transform = "translate3d(0,0,0)";
-                document.getElementById("top_button").style.width = "64px";
-                document.getElementById("top_button").style.height = "64px";
-            } else {
-                document.getElementById("top_button").style.transform = "translate3d(12px,160px,0)";
-                document.getElementById("top_button").style.width = "100px";
-                document.getElementById("top_button").style.height = "100px";
-            }
-        };
-
-
-    </script>
     <style>
         body {
             font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
@@ -612,10 +495,18 @@
     <div id="content">
         <div id="image">
             <ul id="auto_image">
-                <li id="image_0"><a href="#" style="cursor: pointer;background: url('image/image_1.jpg'); display: block;background-size: contain;"></a></li>
-                <li id="image_1"><a href="#" style="cursor: pointer;background: url('image/note.png'); display: block;background-size: contain;"></a></li>
-                <li id="image_2"><a href="./handShaker.html" style="cursor: pointer;background: url('image/handshaker.jpg'); display: block;background-size: contain;"></a></li>
-                <li id="image_3"><a href="#" style="cursor: pointer;background: url('image/desktop.png'); display: block;background-size: contain;"></a></li>
+                <li id="image_0"><a href="#"
+                                    style="cursor: pointer;background: url('image/image_1.jpg'); display: block;background-size: contain;"></a>
+                </li>
+                <li id="image_1"><a href="#"
+                                    style="cursor: pointer;background: url('image/note.png'); display: block;background-size: contain;"></a>
+                </li>
+                <li id="image_2"><a href="./handShaker.html"
+                                    style="cursor: pointer;background: url('image/handshaker.jpg'); display: block;background-size: contain;"></a>
+                </li>
+                <li id="image_3"><a href="#"
+                                    style="cursor: pointer;background: url('image/desktop.png'); display: block;background-size: contain;"></a>
+                </li>
             </ul>
             <ul id="slide_button">
                 <li id="dot_0" onclick="changeImage0()" style="background-position: 0 -18px;"></li>
@@ -750,5 +641,122 @@
     </div>
 </div>
 <div id="top_button" onclick="window.location.href='javascript:scroll(0,0)'">TOP</div>
+<script type="text/javascript">
+    //        var image0 = document.getElementById("image_0");
+    //        var image1 = document.getElementById("image_1");
+    //        var image2 = document.getElementById("image_2");
+    //        var image3 = document.getElementById("image_3");
+
+    var i = 0;
+    var auto = window.setInterval(function () {
+        if (i == 0) {
+            document.getElementById("image_3").style.opacity = "0";
+            document.getElementById("image_0").style.opacity = "1";
+            document.getElementById("image_3").style.zIndex = "0";
+            document.getElementById("image_0").style.zIndex = "1";
+            document.getElementById("dot_3").style.backgroundPosition = "0 0";
+            document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
+//                    i = 1;
+
+//                    window.setTimeout(change(i), 2000);
+        } else if (i == 1) {
+            document.getElementById("image_0").style.opacity = "0";
+            document.getElementById("image_1").style.opacity = "1";
+            document.getElementById("image_0").style.zIndex = "0";
+            document.getElementById("image_1").style.zIndex = "1";
+            document.getElementById("dot_0").style.backgroundPosition = "0 0";
+            document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
+//                    i = 2;
+//                    window.setTimeout(change(i), 2000);
+        } else if (i == 2) {
+            document.getElementById("image_1").style.opacity = "0";
+            document.getElementById("image_2").style.opacity = "1";
+            document.getElementById("image_1").style.zIndex = "0";
+            document.getElementById("image_2").style.zIndex = "1";
+            document.getElementById("dot_1").style.backgroundPosition = "0 0";
+            document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
+//                    i = 3;
+//                    window.setTimeout(change(i), 2000);
+        } else if (i == 3) {
+            document.getElementById("image_2").style.opacity = "0";
+            document.getElementById("image_3").style.opacity = "1";
+            document.getElementById("image_2").style.zIndex = "0";
+            document.getElementById("image_3").style.zIndex = "1";
+            document.getElementById("dot_2").style.backgroundPosition = "0 0";
+            document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
+//                    i = 0;
+//                    window.setTimeout(change(i), 2000);
+        }
+        i += 1;
+        if (i == 4) {
+            i = 0;
+        }
+    }, 3000);
+
+    function changeImage0() {
+        i = 0;
+        document.getElementById("image_0").style.opacity = "1";
+        document.getElementById("image_1").style.opacity = "0";
+        document.getElementById("image_2").style.opacity = "0";
+        document.getElementById("image_3").style.opacity = "0";
+        document.getElementById("dot_0").style.backgroundPosition = "0 -18px";
+        document.getElementById("dot_1").style.backgroundPosition = "0 0";
+        document.getElementById("dot_2").style.backgroundPosition = "0 0";
+        document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+    }
+    function changeImage1() {
+        i = 1;
+        document.getElementById("image_0").style.opacity = "0";
+        document.getElementById("image_1").style.opacity = "1";
+        document.getElementById("image_2").style.opacity = "0";
+        document.getElementById("image_3").style.opacity = "0";
+        document.getElementById("dot_0").style.backgroundPosition = "0 0";
+        document.getElementById("dot_1").style.backgroundPosition = "0 -18px";
+        document.getElementById("dot_2").style.backgroundPosition = "0 0";
+        document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+    }
+    function changeImage2() {
+        i = 2;
+        document.getElementById("image_0").style.opacity = "0";
+        document.getElementById("image_1").style.opacity = "0";
+        document.getElementById("image_2").style.opacity = "1";
+        document.getElementById("image_3").style.opacity = "0";
+        document.getElementById("dot_0").style.backgroundPosition = "0 0";
+        document.getElementById("dot_1").style.backgroundPosition = "0 0";
+        document.getElementById("dot_2").style.backgroundPosition = "0 -18px";
+        document.getElementById("dot_3").style.backgroundPosition = "0 0";
+
+    }
+    function changeImage3() {
+        i = 3;
+        document.getElementById("image_0").style.opacity = "0";
+        document.getElementById("image_1").style.opacity = "0";
+        document.getElementById("image_2").style.opacity = "0";
+        document.getElementById("image_3").style.opacity = "1";
+        document.getElementById("dot_0").style.backgroundPosition = "0 0";
+        document.getElementById("dot_1").style.backgroundPosition = "0 0";
+        document.getElementById("dot_2").style.backgroundPosition = "0 0";
+        document.getElementById("dot_3").style.backgroundPosition = "0 -18px";
+
+    }
+
+    window.onscroll = function () {
+        var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+        if (scrollTop > 500) { //判断滚动条距离窗口顶部多远时显示出来，这里是100px
+//                document.getElementById("top_button").style.display = "block";
+            document.getElementById("top_button").style.transform = "translate3d(0,0,0)";
+            document.getElementById("top_button").style.width = "64px";
+            document.getElementById("top_button").style.height = "64px";
+        } else {
+            document.getElementById("top_button").style.transform = "translate3d(12px,160px,0)";
+            document.getElementById("top_button").style.width = "100px";
+            document.getElementById("top_button").style.height = "100px";
+        }
+    };
+
+
+</script>
 </body>
 </html>
