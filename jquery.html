@@ -152,7 +152,6 @@
             width: 1000px;
             height: 500px;
             margin: 0 auto;
-            transition: transform 1s ease-in-out;
         }
 
         .fontColor {
@@ -163,7 +162,6 @@
             border: 1px solid #cdcdcd;
             border-radius: 8px;
             z-index: -98;
-            transition-duration: 5s;
         }
 
         .blur {
@@ -174,8 +172,8 @@
             top: 20px;
             box-shadow: 0 0 80px #333;
             z-index: -99;
-            opacity: 0.5;
-            transition-duration: 5s;
+            opacity: 0.8;
+            border-radius: 8px;
         }
 
         .colorFont {
@@ -185,7 +183,6 @@
             height: 500px;
             z-index: -1;
             vertical-align: middle;
-            transition-duration: 5s;
         }
 
         .nav {
@@ -268,10 +265,10 @@
     <div class="fontColor"></div>
     <div class="blur"></div>
     <div class="colorFont">
-        <p>黄色黄色黄色黄色黄色黄色黄色黄色</p>
-        <p>红色红色红色红色红色红色红色红色</p>
-        <p>绿色绿色绿色绿色绿色绿色绿色绿色</p>
-        <p>蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色</p>
+        <p class="yellow">黄色黄色黄色黄色黄色黄色黄色黄色</p>
+        <p class="red">红色红色红色红色红色红色红色红色</p>
+        <p class="green">绿色绿色绿色绿色绿色绿色绿色绿色</p>
+        <p class="blue">蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色</p>
     </div>
 </div>
 <!--<div class="colorFont">-->
@@ -488,48 +485,41 @@
     });
     $(function () {
         $(".move").mouseover(function () {
-            $(".fontColor").css({"transition": "all 0.25s","transition-duration": "0.5s"});
-            $(".blur").css({"transition": "all 0.25s","transition-duration": "0.5s"});
-            $(".colorFont").css({"transition": "all 0.25s","transition-duration": "0.5s"});
+            $(".move").css({"transition-duration": "0.3s"});
+            $(".blur").css({"transition-duration": "0.3s"});
+            $(".colorFont").css({"transition-duration": "0.3s"});
         }).mousemove(function (e) {
-            $(".fontColor").css({
-                "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.0333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01211 - 6) + "deg)"
+            $(".move").css({
+                "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.03333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01333 - 6) + "deg)"
             });
             $(".colorFont").css({
-                "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.0333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01211 - 6) + "deg)"
+                "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.03333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01333 - 6) + "deg)",
+                "transform": "translate3d("
+                + (e.originalEvent.offsetX * 0.04 - 20) + "px,"
+                + (e.originalEvent.offsetY * 0.04 - 10) + "px," + "0px" + ")"
             });
             $(".blur").css({
                 "opacity": "1",
                 "transform": "translate3d("
-                + (-e.originalEvent.offsetX * 0.02 + 10) + "px,"
-                + (-e.originalEvent.offsetY * 0.04 + 10) + "px," + "0px" + ")",
+                + (-e.originalEvent.offsetX * 0.036 + 18) + "px,"
+                + (-e.originalEvent.offsetY * 0.072 + 18) + "px," + "0px" + ")"
             });
-//            setTimeout(function () {
-//                $(".fontColor").css({"transition": "transform 0.05s"});
-//                $(".blur").css({"transition": "transform 0.05s"});
-//                $(".colorFont").css({"transition": "transform 0.05s"});
-//            }, 500);
         })
                 .mouseleave(function () {
-                    $(".fontColor").css({
-                        "transition": "all 0.25s",
+                    $(".move").css({
+
                         "transform": "rotateX(0deg) rotateY(0deg)"
                     });
                     $(".blur").css({
-                        "transition": "all 0.25s",
+
                         "opacity": "0.5",
                         "transform": "translate3d(0px, 0px, 0px)"
                     });
                     $(".colorFont").css({
-                        "transition": "all 0.25s",
+
                         "transform": "rotateX(0deg) rotateY(0deg)"
                     });
                 });
-//            $(".blur").mousemove(function (e) {
-//                $(this).css({"transform": "translate3d("
-//                + (-e.originalEvent.offsetX * 0.06 + 30) + "px,"
-//                + (-e.originalEvent.offsetY * 0.12 + 15) + "px," + "0px" + ")"})
-//            })
     });
 </script>
 </body>
