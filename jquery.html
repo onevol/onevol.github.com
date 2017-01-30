@@ -152,11 +152,14 @@
             width: 1000px;
             height: 500px;
             margin: 0 auto;
+            transition-duration: 0.3s;
+            z-index: 1;
+            overflow: hidden;
         }
 
         .fontColor {
             position: absolute;
-            background-color: #555;
+            background-image: url("image/color.png");
             width: 1000px;
             height: 500px;
             border: 1px solid #cdcdcd;
@@ -182,7 +185,16 @@
             width: 1000px;
             height: 500px;
             z-index: -1;
-            vertical-align: middle;
+            background: url("image/ironman.png") center no-repeat;
+        }
+
+        .ironFont {
+            position: relative;
+            top: -970px;
+            width: 1000px;
+            height: 500px;
+            z-index: 0;
+            background: url("image/ironman_font.png") center no-repeat;
         }
 
         .nav {
@@ -198,16 +210,6 @@
             display: none;
             width: 100%;
             height: 52px;
-        }
-
-        .colorFont {
-            /*margin: 10px auto;*/
-            /*padding: 20px;*/
-            font-size: 50px;
-            /*opacity: 0.8;*/
-            text-shadow: #666 0px 1px 10px;
-            cursor: default;
-            /*width: 800px;*/
         }
 
         .foot {
@@ -264,12 +266,8 @@
 <div class="move">
     <div class="fontColor"></div>
     <div class="blur"></div>
-    <div class="colorFont">
-        <p class="yellow">黄色黄色黄色黄色黄色黄色黄色黄色</p>
-        <p class="red">红色红色红色红色红色红色红色红色</p>
-        <p class="green">绿色绿色绿色绿色绿色绿色绿色绿色</p>
-        <p class="blue">蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色</p>
-    </div>
+    <div class="colorFont"></div>
+    <div class="ironFont"></div>
 </div>
 <!--<div class="colorFont">-->
 <!--<p class="yellow">黄色黄色黄色黄色黄色黄色黄色黄色</p>-->
@@ -485,18 +483,23 @@
     });
     $(function () {
         $(".move").mouseover(function () {
-            $(".move").css({"transition-duration": "0.3s"});
+//            $(".move").css({"transition-duration": "0.3s"});
             $(".blur").css({"transition-duration": "0.3s"});
             $(".colorFont").css({"transition-duration": "0.3s"});
+            $(".ironFont").css({"transition-duration": "0.3s"});
         }).mousemove(function (e) {
             $(".move").css({
                 "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.03333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01333 - 6) + "deg)"
             });
             $(".colorFont").css({
-                "transform": "rotateX(" + (-e.originalEvent.offsetY * 0.03333 + 8) + "deg) " + "rotateY(" + (e.originalEvent.offsetX * 0.01333 - 6) + "deg)",
                 "transform": "translate3d("
-                + (e.originalEvent.offsetX * 0.04 - 20) + "px,"
-                + (e.originalEvent.offsetY * 0.04 - 10) + "px," + "0px" + ")"
+                + (-e.originalEvent.offsetX * 0.02 + 10) + "px,"
+                + (-e.originalEvent.offsetY * 0.002 + 0.5) + "px," + "0px" + ")"
+            });
+            $(".ironFont").css({
+                "transform": "translate3d("
+                + (-e.originalEvent.offsetX * 0.04 + 20) + "px,"
+                + (-e.originalEvent.offsetY * 0.04 + 10) + "px," + "0px" + ")"
             });
             $(".blur").css({
                 "opacity": "1",
@@ -507,17 +510,17 @@
         })
                 .mouseleave(function () {
                     $(".move").css({
-
                         "transform": "rotateX(0deg) rotateY(0deg)"
                     });
                     $(".blur").css({
-
-                        "opacity": "0.5",
                         "transform": "translate3d(0px, 0px, 0px)"
                     });
                     $(".colorFont").css({
 
                         "transform": "rotateX(0deg) rotateY(0deg)"
+                    });
+                    $(".ironFont").css({
+                        "transform": "translate3d(0px, 0px, 0px)"
                     });
                 });
     });
