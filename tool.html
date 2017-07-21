@@ -124,14 +124,16 @@
         function rep() {
 //            替换
             var text = $("#text").val();
-//            text = text.replace("\n", "");
-            var textArr = text.split("，");
-            var str = "";
-            for (var i = 0; i < textArr.length; i++) {
-                str +=  textArr[i] + "\n";
-            }
+//            var textArr = text.split("，");
+//            var str = "";
+//            for (var i = 0; i < textArr.length; i++) {
+//                str +=  textArr[i] + "\n";
+//            }
+            var str1 = text.replace(/[\，]/g, "\n");
+            var str = str1.replace(/[\。]/g, "\n");
+
             $("#out").text(str);
-            $("#count").text(textArr.length - 1);
+//            $("#count").text(textArr.length - 1);
         }
 
         function get() {
@@ -197,22 +199,42 @@
             return succeed;
         }
     </script>
+    <style>
+        button {
+            margin: 5px;
+            width: auto;
+            height: auto;
+            border: 0 solid #fff;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #ccc;
+            outline: none;
+            font-size: 15px;
+            background: #cccccc;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        button:active {
+            box-shadow: 1px 1px 0 #ccc;
+        }
+    </style>
 </head>
 <body>
 <div style="float: left">
-    <textarea id="text" cols="30" rows="40"></textarea>
+    <textarea id="text" cols="29" rows="35"></textarea>
     <button id="empty"  onclick="empty()" style="display: block">清空</button>
 </div>
 <div style="float: left;margin: 100px 20px">
     <button id="button" onclick="add()">添加</button>
     <button id="button2" onclick="add2()" style="display: block;">添加,</button>
-    <button id="button3" onclick="rep()" style="display: block;">格式化</button>
-    <textarea id="addKey" cols="5" rows="1" style="float:left"></textarea>
-    <button id="button4" onclick="add3()" style="">添加</button>
-    <button id="button5" onclick="get()">av名字</button>
+    <button id="button3" onclick="rep()" style="display: block;color: #DE4037">格式化</button>
+    <p>
+        <textarea id="addKey" cols="5" rows="1" style="float:left"></textarea>
+        <button id="button4" onclick="add3()" style="margin: 0;">添加</button>
+    </p>
+    <button id="button5" onclick="get()">名字</button>
 </div>
 <div style="float: left">
-    <textarea id="out" cols="30" rows="40"></textarea>
+    <textarea id="out" cols="29" rows="35"></textarea>
 </div>
 <div style="float: left; margin: 100px 20px">
     <p>总数：<span id="count"></span></p>

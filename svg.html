@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, target-densitydpi=high-dpi, user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .line1 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-fill-mode: forwards;
+        }
+
+        .line2 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3.5s linear;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
+
+        .line3 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3.5s linear;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .line4 {
+            stroke-dasharray: 1500;
+            stroke-dashoffset: 1500;
+            animation: dash 3s linear;
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards;
+        }
+
+        .line5 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 1.8s;
+            animation-fill-mode: forwards;
+        }
+
+        .line6 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        .line7 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 2.4s;
+            animation-fill-mode: forwards;
+        }
+
+        .line8 {
+            stroke-dasharray: 1500;
+            stroke-dashoffset: 1500;
+            animation: dash 3.5s linear;
+            animation-delay: 2.8s;
+            animation-fill-mode: forwards;
+        }
+
+        .line9 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 3.2s;
+            animation-fill-mode: forwards;
+        }
+
+        .line10 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 3.6s;
+            animation-fill-mode: forwards;
+        }
+
+        .line11 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        .line12 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear;
+            animation-delay: 4.2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .heart-shape {
+            margin: 0 auto;
+            position: relative;
+            top: -50px;
+            width: 20px;
+            height: 20px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background-color: rgba(255, 23, 14, 0.8);
+        }
+
+        .heart-shape:before,
+        .heart-shape:after {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            content: '';
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            background-color: rgba(255, 23, 14, 0.8);
+        }
+
+        .heart-shape:before {
+            bottom: 0px;
+            left: -9px;
+        }
+
+        .heart-shape:after {
+            top: -9px;
+            right: 0px;
+        }
+
+        .heart-shape {
+            animation: pounding 0.8s linear infinite;
+        }
+
+        @keyframes pounding {
+            0% {
+                transform: rotate(45deg) scale(1.2);
+            }
+            16% {
+                transform: rotate(45deg) scale(1.1);
+            }
+            38% {
+                transform: rotate(45deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(45deg) scale(1);
+
+            }
+        }
+
+        p {
+            position: relative;
+            top: 20px;
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 auto;
+            padding: 0 100px 20px 100px;
+            opacity: 0.01;
+            -moz-transition: top 2s ease,opacity 2s ease;
+            -webkit-transition: top 2s ease,opacity 2s ease;
+            -o-transition: top 2s ease,opacity 2s ease;
+            transition: top 2s ease,opacity 2s ease;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+
+        /*@media (min-device-width: 320px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2)  {*/
+        /*p {*/
+        /*padding: 0 50px 20px 50px;*/
+        /*}*/
+        /*}*/
+
+        @media only screen and (min-width: 320px) and (max-width: 374px) {
+            p {
+                padding: 0 30px 20px 30px;
+            }
+
+            #svg {
+                position: relative;
+                left: -50px;
+                top: -50px;
+                transform: scale(0.5);
+            }
+
+            .heart-shape {
+                top: -115px;
+            }
+
+            #content {
+                position: relative;
+                top: -66px;
+            }
+        }
+
+        @media only screen and (min-width: 375px) and (max-width: 667px) {
+            p {
+                padding: 0 30px 20px 30px;
+            }
+
+            #svg {
+                position: relative;
+                left: -50px;
+                top: -50px;
+                transform: scale(0.6);
+            }
+
+            .heart-shape {
+                top: -115px;
+            }
+
+            #content {
+                position: relative;
+                top: -66px;
+            }
+        }
+    </style>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script>
+        $(function () {
+            setTimeout(function () {
+                $("p").css({"top": "0", "opacity": "1"});
+            }, 500);
+        });
+    </script>
+</head>
+<body>
+
+<div id="svg">
+    <svg width="540" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+        <g>
+            <title>Layer 1</title>
+            <path class="line1"
+                  d="m30.5,136.83333c0,0 3.38688,-0.9176 6,-2c1.84776,-0.76537 6,0 8,0c4,0 4,0 8,0c0,0 2,0 4,0c2,0 2,0 6,0c0,0 2,0 4,0c2,0 6,0 6,0c4,0 6,0 8,0l2,0l0,0"
+                  id="svg_4" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line2"
+                  d="m54.5,110.83334c0,0 0,2 0,6c0,2 0,4 0,4c0,2 0,4 0,4c0,2 0,2 0,3.99999c0,0 0,2 0,2c2,2 2,2 2,4c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,2 0,2 0,2c0,2 0,2 0,4c0,0 0,0 0,2c0,0 0,0 0,2c0,0 0,2 0,2c0,2 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,2 0,2 0,2c0,2 0,2 0,4c0,2 0,2 0,2c0,2 -1.41422,2.58578 0,4c1.41422,1.41422 2,2 2,2c2,0 2,0 4,2c0,0 2,0 2,0c2,0 0.58578,0.58578 2,2c1.41422,1.41422 2,0 4,0c0,0 0,0 2,0c0,0 2,0 2,0c2,0 2,0 4,0c0,0 2,0 2,0c2,0 2,0 2,0c2,0 2,0 2,0c2,-2 2,-2 2,-2c0,-2 2,-2 2,-2c0,0 -1.41422,-2.58578 0,-4c1.41422,-1.41422 2,-2 2,-2c0,-2 0,-4 2,-4c0,0 0,-2 0,-2l0,0"
+                  id="svg_5" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line3"
+                  d="m130.5,146.83333c0,0 0,0 -2,0c0,0 -2,0 -2,2c0,0 0,0 -2,2c0,0 -2,2 -2,2c0,2 -0.58578,0.58578 -2,2c-1.41422,1.41422 0,2 0,4c0,0 0,2 0,2c0,2 0,4 0,6c0,0 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,0 0,2c0,0 0,2 0,2c0,2 2,2 2,2c0,2 2,2 4,4c0,0 2,0 4,0c0,0 0,0 2,0c0,0 2,0 4,0c0,0 2,0 4,0c0,0 2,0 2,0c0,0 2,0 2,0c2,0 2,0 2,0c0,-2 2,-2 2,-2c2,-2 2,-2 2,-2c0,-2 2,-4 2,-4c0,-2 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,-2 0,-2 -2,-4c0,0 0,-2 0,-2c0,-2 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,0 -2,-2c0,0 0,0 0,-2c0,0 0,-2 0,-2c-2,0 -2,-2 -2,-4c0,0 -2,-2 -2,-2c-2,-2 -2,-2 -2,-2c-2,0 -4,0 -4,0c-2,0 -2,0 -4,0c0,0 -2,0 -2,0c-2,0 -2,0 -2,0l-2,0l0,0"
+                  id="svg_6" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line4"
+                  d="m188.5,116.83334c0,0 0,2 0,2c0,2 0,2 0,4c0,2 0,4 0,4c0,3.99999 0.58578,4.58578 2,5.99999c1.41422,1.41422 0,4 2,6c0,0 0,2 0,4c0,2 2,4 2,4c0,2 0,2 0,4c0,0 2,0 2,2c0,2 0.58578,2.58578 2,4c1.41422,1.41422 2,4 2,4c0,0 0,2 0,2c0,2 0,4 2,4c0,0 0,0 0,2c0,2 0,6 0,6c0,2 0.9176,1.38687 2,4c0.76537,1.84776 0,4 0,4c0,2 0,2 0,0c0,-2 0.9176,-3.38687 2,-6c0.76537,-1.84776 0,-4 0,-8c0,0 2,-4 2,-4c0,-4 0,-4 0,-6c0,-2 0,-4 0,-6c0,-2 0,-4 0,-6c0,-2 0,-4 0,-4c0,-2 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,0 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-1.99999c0,0 0,0 0,-2c0,-2 2,-2 2,-2c0,2 0,4 0,7.99999c0,2 0,4 0,6c0,2 0,4 0,6c0,0 0,0 0,2c0,2 0.9176,1.38687 2,4c0.76537,1.84776 0,2 0,4c0,2 0,4 0,4c0,2 -0.4595,2.0535 0,4c1.02748,4.35251 2,6 2,6c0,2 0.58578,2.58578 2,4c1.41422,1.41422 0,2 0,2c0,2 0,2 0,4c0,0 2,2 2,2c0,2 0,2 0,2c0,2 0,2 0,2c0,0 0,0 0,-2c0,0 0,-2 0,-4c0,0 0,0 0,-4c0,0 0,0 0,-2c0,-2 0,-2 2,-4c0,0 0,-2 0,-4c0,-2 0,-2 0,-4c0,-2 2,-2 2,-4c0,0 0,-2 0,-4c0,0 2,-4 2,-4c0,-2 0,-4 0,-6c0,0 2,0 2,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,0 2,-2 2,-4c0,0 0,-1.99999 0,-3.99999c0,0 0,0 0,-2c0,0 0,-2 0,-2c0,-2 0,-2 0,-2c0,-2 0,-2 0,-2l0,-2l2,0l0,-2"
+                  id="svg_7" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line5"
+                  d="m250.5,156.83333c-2,0 -2,0 -6,0c0,0 -2,0 -2,0c-2,0 -2.58578,-1.41422 -4,0c-1.41422,1.41422 -2,2 -2,2c0,2 0,2 0,4c0,0 0,2 0,2c0,0 -0.76537,2.15224 0,4c1.0824,2.61313 2,4 2,4c2,2 4,4 6,6c0,0 2,2 2,2c2,0 2,0 4,0c0,0 2,0 4,0c0,0 2,0 4,0c0,0 0,0 0,0c2,0 2,-2 2,-4c0,0 0,0 0,-2c0,0 0,-2 0,-4c0,0 0,-2 0,-2c0,-2 0,-4 0,-4c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,-2 -2,-4 -2,-4c0,0 -2,0 -2,0c0,0 -2,0 -2,0c0,0 0,2 0,2c0,2 0,2 2,4c0,0 0,0 0,0c0,2 0,2 0,4c0,0 0,2 2,2c0,0 0,2 0,2c0,2 2,2 2,4c0,0 0,0 2,2c0,0 0,2 0,2c2,2 2,2 2,2c2,2 2,4 4,4c0,0 0,0 2,2c0,0 0,0 2,0l0,2"
+                  id="svg_9" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line6"
+                  d="m284.5,182.83333c0,0 0,0 0,-2c0,0 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,0 0,-2 0,-2c0,-2 0,-2 0,-2c0,-2 0,-4 0,-4c0,0 0,-2 0,-2c0,0 0,-2 0,-4c0,0 0,0 2,-2c0,0 0,-2 2,-2c0,0 0,-2 0,-2c2,-2 2,-2 4,-2c0,0 2,-2 4,-2c0,0 2,2 2,2c0,0 2,2 2,2c0,2 0,2 0,4c0,2 0,4 2,6c0,0 0,2 0,2c0,2 0,2 0,2c0,2 0,4 0,4c0,2 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,2c0,0 0,2 0,2c0,0 0,2 0,2l0,2l0,0"
+                  id="svg_10" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line7"
+                  d="m330.5,152.83333c-2,0 -0.58578,0.58578 -2,2c-1.41422,1.41422 -4,0 -4,0c0,0 0,0 -2,2c0,0 -2,0 -2,2c0,2 0,2 0,4c0,0 0,2 0,4c0,0 0,2 0,4c0,0 0,0 0,2c0,0 0,2 0,2c2,2 0.58578,2.58578 2,4c1.41422,1.41422 2,0 4,0c0,0 0,0 2,0c0,0 2,0 2,0c2,0 2,-2 2,-2c0,0 0,-2 2,-4c0,0 0,-2 2,-4c0,0 0,0 0,-2c0,-2 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,0 0,-2 0,-2c0,-2 0,-4 0,-2c0,2 0,2 0,4c0,0 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,4c0,0 0,2 0,2c0,0 0,2 0,2c0,2 0,2 0,2c0,2 0,2 0,4c0,0 0,2 0,4c0,0 -0.9176,-0.61313 -2,2c-0.76538,1.84776 0,2 0,4c0,2 0,2 0,4c0,0 -2,0 -2,2c0,0 0,2 0,2c0,2 0,2 0,2c0,2 0,2 -2,4c0,0 0,0 0,2c0,0 -0.58578,0.58578 -2,2c-1.41422,1.41422 -2,0 -2,2c0,0 -2,0 -2,0c0,0 -2,0 -4,2c0,0 -2,0 -2,0c-2,0 -2,0 -4,0c0,0 -2,0 -2,-2c0,0 -2,0 -2,-2c0,0 0,-2 0,-2l-2,-4l0,0"
+                  id="svg_11" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line8"
+                  d="m362.5,176.83333c-2,0 -2,-2 -2,-2c0,-4 0,-6 0,-10c0,-2 0,-4 0,-6c0,-2 0,-2 0,-4c0,-2 0,-2 0,-2c0,-2 0,-4 0,-6c0,0 0,-2 0,-4c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,0 0,-2 0,-2c0,-1.99999 0.58578,-2.58578 2,-3.99999c1.41422,-1.41422 0,-2 2,-2c0,0 2,0 2,0c0,2 0.29871,4.94853 2,5.99999c3.80423,2.35114 2,6 2,8c0,0 0,2 0,4c0,0 0,2 0,4c0,0 2,2 2,4c0,2 0,2 0,6c0,2 0.9176,1.38687 2,4c0.76538,1.84776 0,2 0,4c0,0 0,2 0,4c0,2 0,2 0,4c0,2 0,2 0,2c0,2 0,2 2,4c0,0 0,-2 0,-4c0,-2 0,-4 0,-6c0,-2 0,-6 0,-8c0,-2 0,-4 0,-6c0,-2 0,-2 0,-4c0,-2 0,-4 0,-4c0,-2 0,-4 0,-4c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,0 0,-2 0,-2c0,0 0,-2 0,-2c0,-2 2,-2 2,-3.99999c0,-2 0,-2 0,-4c0,0 2,-2 2,-2c0,-2 0,-2 0,-4c0,0 2,0 2,2c0,2 0.9176,3.38687 2,6c0.76538,1.84776 0.9725,1.6475 2,5.99999c0.4595,1.9465 0,4 0,6c0,2 0.9176,3.38687 2,6c0.76538,1.84776 0,4 0,6c0,0 0.9176,1.38687 2,4c0.76538,1.84776 0.9176,1.38687 2,4c0.76538,1.84776 0,4 0,4c0,2 0,4 0,4c2,2 2,2 2,4c0,2 0,4 0,4c0,2 0,2 0,4c0,0 0,2 2,2l0,2l0,0l0,2"
+                  id="svg_12" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line9"
+                  d="m414.5,156.83333c2,0 2,0 2,2c0,2 2,4 2,8c0,0 0,4 0,4c0,4 0,6 0,8c0,0 0,2 0,2c2,2 2,2 2,2l0,2l0,0"
+                  id="svg_13" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line10"
+                  d="m414.5,128.83333c-2,0 -2,0 -2,0c-2,0 -2,2 -2,2c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,0 0,0c2,0 2,0 2,0c2,0 2,0 4,0c0,0 0,-2 2,-2c0,0 0,-2 0,-2c0,-2 0,-2 0,-2c-2,0 -2,0 -2,0l-2,0l-2,0l0,0"
+                  id="svg_14" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line11"
+                  d="m450.5,154.83333c0,0 0,0 -2,0c-2,0 -4,2 -4,2c-2,2 -2.9176,1.38687 -4,4c-0.76538,1.84776 -2,4 -2,6c0,0 -2,4 -2,4c0,2 2,4 2,4c0,0 0,2 0,2c2,2 4,2 4,2c2,0 2.58578,1.41422 4,0c1.41422,-1.41422 2,-2 2,-2c0,-2 -0.76538,-4.15224 0,-6c1.0824,-2.61313 2,-2 2,-2c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,-2 0,-2 2,-4c0,0 0,-2 0,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,0 0,0 0,2c0,2 0,2 0,4c0,0 0,0 0,2c0,2 0,2 0,4c0,0 0,2 0,4c0,0 0,2 0,2c0,2 0,2 0,4c0,0 0,0 0,2c0,0 0,0 0,2c0,0 0,2 0,4c0,0 0.58578,0.58578 2,2c1.41422,1.41422 2,2 2,2c2,0 2,0 2,0c2,0 4,0 4,0c2,0 2,0 2,0c2,-2 2.58578,-0.58578 4,-2c1.41422,-1.41422 0,-2 0,-2c2,-2 2,-2 2,-4l0,0l0,-2l0,0"
+                  id="svg_15" stroke-width="1.5" stroke="#000" fill="none"/>
+            <path class="line12"
+                  d="m502.5,150.83333c0,0 -2,0 -2,0c0,0 -2,0 -2,0c-2,2 -2,2 -4,2c0,0 0,2 -2,2c0,0 -2,2 -2,2c0,0 -2,0 -2,2c0,0 -0.19577,1.64886 -4,4c-1.70129,1.05147 -2,0 -2,2c0,0 0,0 -2,2c0,0 0,0 0,2c0,0 0,2 0,2c0,0 0,2 0,2c0,0 0,2 0,2c0,2 0,2 2,4c0,0 2,0 2,2c0,0 2,0 2,0c0,0 2,0 2,0c2,0 2,0 2,0c2,0 2,0 4,0c0,0 2,0 2,0c2,0 2,-2 2,-2c2,0 2,-2 2,-2c0,0 2.58578,-0.58578 4,-2c1.41422,-1.41422 0,-2 0,-4c0,0 2,-2 2,-2c0,-2 0,-2 0,-4c0,0 0,0 0,-2c0,0 0,0 0,-2c0,-2 0,-2 0,-4c0,0 0,-2 0,-2c0,-2 -2,-2 -2,-2c-2,0 -2,0 -4,0c0,0 0,0 -2,0l0,-2l0,0"
+                  id="svg_16" stroke-width="1.5" stroke="#000" fill="none"/>
+        </g>
+    </svg>
+</div>
+<div class="heart-shape"></div>
+<div id="content">
+    <p>
+        第一次遇见你，第一次跟你说话时，就觉得你对我来说不一般，跟你聊天心情就感觉很舒畅，不会不自在。我是一个有点社交恐惧的人，但是站在你身边就不会，就像我们以前在哪里见过的那种感觉，仿佛有着千言万语想对你说。
+    </p>
+    <p>
+        在跟你接触更长的时间后，特别是我生病的那些天，回想起那几天带来的并不是痛苦，而是高兴，因为有你在。从那时起，我对你的感情也发生了微妙的改变，像是一颗种子种在我心里一样，我想我开始喜欢上你了。
+    </p>
+    <p>
+        我们的爱情快得就像龙卷风一样，不过我并不喜欢用龙卷风来形容，因为龙卷风总是浩浩荡荡并且非常短暂，我不希望我们是这样，我希望我们能一直在一起。那会儿一想到跟你在一起的事实，实在是太开心了做梦都能笑醒。
+    </p>
+    <p>
+        有段时间我没了工作，非常的沮丧，但是只要一看到你就忘得一干二净了，浑身有力都是正能量，我可是将来要养你的人，怎么能被这点小事压倒。
+    </p>
+    <p>
+        闹矛盾吵架也是常有的事，每次惹你发脾气，我就像缩头乌龟一样，一句话也不说，也惹的你更生气，我也不知道为什么，但我可以向你保证绝对不是故意那样的，也可以向你保证我对你的感情一点都没有变，还是像刚开始那样如胶似漆。
+    </p>
+    <p>
+        多次的磨合和商量之后，我也试着先从“汪汪”开始哄你，从第一时间的道歉开始祈求你的原谅。我希望我们的新问题，能心平气和的解决，我不想再让你生气或者难过了，每次看你那样都心痛不已。再说了，你还要去做拯救世界的元气仙女呢，怎么能被凡间琐事阻挡。
+    </p>
+    <p>
+        一起做饭是最开心的事情之一了，每次给你做饭都充满成就和自豪感，吃着你做的饭，每咬一口更是能溢出满满的幸福感。
+    </p>
+    <p>
+        在一起都一年多了，时间过得真快啊，有些欣喜又有些悲伤，欣喜在一起快快乐乐地度过了一年，悲伤的是能跟你在一起的时间少了一年。美好的事物，总让人感觉时间不够，我要珍惜跟你在一起的每一天。
+    </p>
+    <p>
+        这一年的时间里，每次看到你活泼、优美的步伐和身影，都忍不住想要抱住你，每次听到你踏实的酣睡声，都忍不住想要亲你一口，完了，我想我这辈子可能要栽倒在你手里了。
+    </p>
+    <p>
+        致怎么看都看不腻，皮肤白皙、温柔贤惠、冰雪聪明、貌美如花的仙女：<span>我最爱的王淼</span></span>
+    </p>
+</div>
+</body>
+</html>
